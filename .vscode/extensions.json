@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",  // ESLint integration
+    "esbenp.prettier-vscode",  // Prettier formatter
+    "ms-vscode.vscode-typescript-next", // TypeScript support
+    "stylelint.vscode-stylelint", // CSS and preprocessor linting
+    "ms-vscode.reactjs-code-snippets", // React snippets
+    "dzhavat.bracket-pair-toggler",
+    "ryanluker.vscode-coverage-gutters",
+    "mrmlnc.vscode-scss",
+    "vscode-icons-team.vscode-icons"
+  ]
+}
