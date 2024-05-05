@@ -1,5 +1,12 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npx jest --bail --findRelatedTests || true
-
+# Gather all staged files that are JavaScript or TypeScript files
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACMR "*.js" "*.jsx" "*.ts" "*.tsx" | xargs)
+# Check if there are any staged files
+if [ -n "$STAGED_FILES" ]; then
+  # Run jest on the staged files
+  npx jest --bail --findRelatedTests $STAGED_FILES
+else
+  echo "No JavaScript or TypeScript files to test."
+fi
