@@ -1,5 +1,4 @@
 import {createTheme} from "@mui/material";
-import {background} from "@storybook/theming";
 
 const nextHrTheme = createTheme({
   palette: {
