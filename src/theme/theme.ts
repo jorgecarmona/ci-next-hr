@@ -38,6 +38,15 @@ const nextHrTheme = createTheme({
             backgroundColor: "rgba(208, 213, 221, 0.04)",
             borderColor: "#B0B5BD"
           }
+        },
+        text: {
+          color: "#475467" // Red text for text variant buttons
+        },
+        containedPrimary: {
+          color: "#ffffff" // Ensures text color is white for primary
+        },
+        containedSecondary: {
+          color: "#ffffff" // Ensures text color is white for secondary
         }
       }
     }

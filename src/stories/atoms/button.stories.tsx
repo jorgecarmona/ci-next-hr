@@ -50,6 +50,14 @@ export const PrimaryWithIcon: Story = {
     children: "Primary button with icon",
     icon: IconType.Add,
     onClick: action("button was clicked") as any
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "This story uses `ButtonType.Primary` to style the button and `IconType.Add` to add a specific icon. Change the values from the controls to see different styles and icons."
+      }
+    }
   }
 };
 
