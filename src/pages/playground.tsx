@@ -2,12 +2,12 @@ import React from "react";
 
 import {useGetUsersQuery} from "../store/api-slice/users-slice";
 
-function Home() {
+function PlayGround() {
   const {data} = useGetUsersQuery();
 
   console.log(data);
 
-  return <h1>Home</h1>;
+  return <h1>PlayGround</h1>;
 }
 
-export default Home;
+export default PlayGround;
