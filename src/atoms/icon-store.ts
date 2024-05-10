@@ -5,14 +5,14 @@ import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
 
 export enum IconType {
   Add = "add",
-  Forward = "forward",
   Business = "business",
+  Forward = "forward",
   Library = "library"
 }
 
 export const iconLookup: Record<IconType, typeof AddOutlinedIcon> = {
   add: AddOutlinedIcon,
-  forward: KeyboardDoubleArrowRightOutlinedIcon,
   business: WorkOutlineOutlinedIcon,
+  forward: KeyboardDoubleArrowRightOutlinedIcon,
   library: LocalLibraryOutlinedIcon
 };
