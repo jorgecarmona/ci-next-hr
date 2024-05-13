@@ -1,18 +1,26 @@
-import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
-import KeyboardDoubleArrowRightOutlinedIcon from "@mui/icons-material/KeyboardDoubleArrowRightOutlined";
-import LocalLibraryOutlinedIcon from "@mui/icons-material/LocalLibraryOutlined";
-import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
+import {
+  AddOutlined,
+  KeyboardDoubleArrowRightOutlined,
+  LocalLibraryOutlined,
+  Visibility,
+  VisibilityOff,
+  WorkOutlineOutlined
+} from "@mui/icons-material";
 
 export enum IconType {
   Add = "add",
-  Forward = "forward",
   Business = "business",
-  Library = "library"
+  Forward = "forward",
+  Library = "library",
+  Visibility = "visibility",
+  VisibilityOff = "visibilityoff"
 }
 
-export const iconLookup: Record<IconType, typeof AddOutlinedIcon> = {
-  add: AddOutlinedIcon,
-  forward: KeyboardDoubleArrowRightOutlinedIcon,
-  business: WorkOutlineOutlinedIcon,
-  library: LocalLibraryOutlinedIcon
+export const iconLookup: Record<IconType, typeof AddOutlined> = {
+  add: AddOutlined,
+  business: WorkOutlineOutlined,
+  forward: KeyboardDoubleArrowRightOutlined,
+  library: LocalLibraryOutlined,
+  visibility: Visibility,
+  visibilityoff: VisibilityOff,
 };
