@@ -1,8 +1,23 @@
-body {
+*,
+::after,
+::before {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: inherit;
   font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 1rem;
+  /* color: rgb(234, 236, 240); */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.card-container {
+  width: 306px;
 }

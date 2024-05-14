@@ -49,6 +49,44 @@ const nextHrTheme = createTheme({
           color: "#ffffff" // Ensures text color is white for secondary
         }
       }
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          borderWidth: "1px",
+          fontFamily: "Poppins, sans-serif",
+          padding: "16px"
+        }
+      }
+    },
+    MuiCardActions: {
+      styleOverrides: {
+        root: {
+          padding: "0"
+        }
+      }
+    },
+    MuiCardContent: {
+      styleOverrides: {
+        root: {
+          padding: "0"
+        }
+      }
+    },
+    MuiCardHeader: {
+      styleOverrides: {
+        root: {
+          padding: "0",
+          marginBottom: "16px"
+        },
+        title: {
+          color: "#000000",
+          fontSize: "14px",
+          fontWeight: "600",
+          lineHeight: "20px",
+          textAlign: "left"
+        }
+      }
     }
   }
 });
