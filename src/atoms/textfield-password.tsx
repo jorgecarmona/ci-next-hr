@@ -12,9 +12,10 @@ interface PasswordProps {
     icon?: boolean
     label: string;
     password: string;
+    required?: boolean
 }
 
-function PasswordTextField({fullWidth = false, label, password, handlePassword, helperText, error, errorHelperText, icon}: PasswordProps) {
+function PasswordTextField({fullWidth = false, label, password, handlePassword, helperText, error, errorHelperText, icon, required}: PasswordProps) {
     const [showPassword, setShowPassword] = React.useState<boolean>(false);
 
     const handleClickShowPassword = () => {
@@ -58,6 +59,7 @@ function PasswordTextField({fullWidth = false, label, password, handlePassword, 
             onChange={handlePasswordChange}
             helperText={newHelperText} 
             error={Boolean(error)} 
+            required={required}
             InputProps={{
             endAdornment: renderPasswordIcon(),
             }}
