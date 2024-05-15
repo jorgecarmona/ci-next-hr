@@ -19,6 +19,32 @@ const meta = {
     borderColor: {
       control: "color",
       description: "Selects border color"
+    },
+    header: {
+      options: ["Node", "String"],
+      mapping: {
+        Node: (
+          <CardHeader
+            avatar={<iconLookup.business />}
+            action={
+              <IconButton>
+                <iconLookup.add />
+              </IconButton>
+            }
+            title="Header with type node"
+          />
+        ),
+        String: "Header with type string"
+      },
+      description: "Options for the header type"
+    },
+    content: {
+      control: "text",
+      description: "Card content"
+    },
+    footer: {
+      control: "text",
+      description: "Card footer"
     }
   },
   args: {
