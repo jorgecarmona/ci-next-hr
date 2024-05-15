@@ -1,3 +1,4 @@
+// Theme.tsx
 import {createTheme} from "@mui/material";
 
 const nextHrTheme = createTheme({
@@ -7,6 +8,15 @@ const nextHrTheme = createTheme({
     },
     secondary: {
       main: "#344054"
+    },
+    success: {
+      main: "#027A48" 
+    },
+    error: {
+      main: "#b42318" 
+    },
+    warning: {
+      main: "#FFA000" 
     }
   },
   typography: {
@@ -40,16 +50,57 @@ const nextHrTheme = createTheme({
           }
         },
         text: {
-          color: "#475467" // Red text for text variant buttons
+          color: "#475467" 
         },
         containedPrimary: {
-          color: "#ffffff" // Ensures text color is white for primary
+          color: "#ffffff" 
         },
         containedSecondary: {
-          color: "#ffffff" // Ensures text color is white for secondary
+          color: "#ffffff" 
         }
       }
-    }
+    },
+    MuiChip: {
+      styleOverrides: {
+        root: {
+          fontFamily: "Poppins, sans-serif",
+          fontWeight: 500,
+          borderWidth:"1.10px",
+          "&.pending": {
+            backgroundColor: "#EFF8FF",
+            color: "#175CD3"
+          },
+          "&.open": {
+            backgroundColor: "#F4F3FF",
+            color: "#5925DC"
+          },
+          "&.approved": {
+            backgroundColor: "#ECFDF3",
+            color: "#027A48"
+          },
+          "&.denied": {
+            backgroundColor: "#FEF3F2",
+            color: "#b42318"
+          },
+          "&.enabled": {
+            borderColor: "#027A48", 
+            color: "#027a48" 
+          },
+          "&.rejected": {
+            borderColor: "#D92D20", 
+            color: "#D92D20" 
+          },
+          "&.disabled": {
+            borderColor: "#E7A63F", 
+            color: "#E7A63F" 
+          },
+          "&.default": {
+            backgroundColor: "#EAECF0",
+            color: "#000000"
+          }
+        }
+      }
+    },
   }
 });
 
