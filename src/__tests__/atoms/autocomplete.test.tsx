@@ -1,14 +1,12 @@
-import { render, screen, fireEvent } from '@testing-library/react';
-
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-
 import { Autocomplete } from '../../atoms';
 
 describe('Testing for the Autocomplete component', () => {
   const options = [
-    {label: 'English', value: 'english'},
+    { label: 'English', value: 'english' },
     { label: 'City of Residence', value: 'cityOfResidence' },
-    {label: 'City of Residence', value: 'cityOfResidence'},
+    { label: 'City of Residence', value: 'cityOfResidence' },
   ];
 
   test('should render without errors', () => {
@@ -39,13 +37,14 @@ describe('Testing for the Autocomplete component', () => {
     userEvent.type(screen.getByRole('combobox'), 'Opción 1');
     expect(screen.getByRole('combobox')).toHaveValue('Opción 1');
   });
-  
+
   test('should change the input value when an option is selected', () => {
     render(<Autocomplete id="autocomplete" options={options} value="" />);
     const input = screen.getByRole('combobox');
-    userEvent.type(input, 'Opción 1');
-    fireEvent.change(input, { target: { value: 'Opción 1' } });
-    expect(input).toHaveValue('Opción 1');
-  })
-
-})
+    userEvent.type(input, 'English'); // Simula escribir para activar el autocompletar
+    const option = screen.getByText('English'); // Encuentra la opción que deseas seleccionar
+    userEvent.click(option); // Simula hacer clic en la opción
+    expect(input).toHaveValue('English');
+  });
+  
+});
