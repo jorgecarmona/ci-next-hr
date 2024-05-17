@@ -49,6 +49,42 @@ const nextHrTheme = createTheme({
           color: "#ffffff" // Ensures text color is white for secondary
         }
       }
+    },
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          fontWeight: 500
+        },
+        body1: {
+          fontWeight: 400,
+          fontSize: "1rem",
+          lineHeight: "1.5rem"
+        },
+        h1: {
+          fontSize: "2.25rem",
+          lineHeight: "2.75rem"
+        },
+        h2: {
+          fontSize: "2rem",
+          lineHeight: "2.5rem"
+        },
+        h3: {
+          fontSize: "1.5rem",
+          lineHeight: "2.25rem"
+        },
+        h4: {
+          fontSize: "1.25rem",
+          lineHeight: "1.875rem"
+        },
+        h5: {
+          fontSize: "1.125rem",
+          lineHeight: "1.75rem"
+        },
+        h6: {
+          fontSize: "1rem",
+          lineHeight: "1.5rem"
+        }
+      }
     }
   }
 });
