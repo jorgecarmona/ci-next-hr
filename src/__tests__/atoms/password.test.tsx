@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 
-import PasswordTextField from "../atoms/textfield-password";
+import PasswordTextField from "../../atoms/textfield-password";
 import userEvent from "@testing-library/user-event";
 
 describe("PasswordTextField", () => {

@@ -1,7 +1,7 @@
 import React from "react";
 
 import { iconLookup } from "./icon-store";
-import { IconButton, InputAdornment, TextField } from "@mui/material";
+import { IconButton, InputAdornment, TextField, InputLabel } from "@mui/material";
 
 interface PasswordProps {
     error?: boolean;
@@ -50,20 +50,24 @@ function PasswordTextField({fullWidth = false, label, password, handlePassword, 
     }
 
     return (
-        <TextField
-            fullWidth={fullWidth}
-            size="small"
-            type={showPassword ? "text" : "password"}
-            label={label}
-            value={password}
-            onChange={handlePasswordChange}
-            helperText={newHelperText} 
-            error={Boolean(error)} 
-            required={required}
-            InputProps={{
-            endAdornment: renderPasswordIcon(),
-            }}
-        />
+        <>
+            <InputLabel required={false} >
+                {label} {required && <span style={{color: "red"}}>*</span>}
+            </InputLabel>
+            <TextField
+                fullWidth={fullWidth}
+                size="small"
+                type={showPassword ? "text" : "password"}
+                value={password}
+                onChange={handlePasswordChange}
+                helperText={newHelperText} 
+                error={Boolean(error)} 
+                required={required}
+                InputProps={{
+                endAdornment: renderPasswordIcon(),
+                }}
+            />
+        </>
     );
 }
 
