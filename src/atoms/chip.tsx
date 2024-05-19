@@ -1,18 +1,16 @@
-
-// Chip.tsx
 import React from 'react';
 import MuiChip, { ChipProps as MuiChipProps } from '@mui/material/Chip';
 
 export type ChipType = 'pending' | 'open' | 'approved' | 'outlined' | 'denied' | 'default' | 'enabled' | 'disabled' | 'rejected';
 
 interface ChipProps extends Omit<MuiChipProps, 'color' | 'onDelete' | 'onClick'> {
-  type?: ChipType;
   label: string;
-  onDelete?: () => void;
   onClick?: () => void;
+  onDelete?: () => void;
+  type?: ChipType;
 }
 
-function Chip({ type = 'default', label, onDelete, onClick, ...rest }: ChipProps) {
+function Chip({ label, onClick, onDelete, type = 'default', ...rest }: ChipProps) {
   let color: "primary" | "secondary" | undefined = undefined;
   let variant: "filled" | "outlined" = "filled";
 
@@ -36,12 +34,12 @@ function Chip({ type = 'default', label, onDelete, onClick, ...rest }: ChipProps
   return (
     <MuiChip
       className={type}
-      {...rest}
-      label={label}
       color={color}
-      variant={variant}
-      onDelete={onDelete}
+      label={label}
       onClick={onClick}
+      onDelete={onDelete}
+      variant={variant}
+      {...rest}
     />
   );
 }
