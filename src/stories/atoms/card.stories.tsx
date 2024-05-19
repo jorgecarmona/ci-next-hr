@@ -60,7 +60,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const WithHeaderTitle: Story = {
+export const CardWithHeaderTitle: Story = {
   args: {
     bgColor: "#FFFFFF",
     borderColor: "#EAECF0",
@@ -82,7 +82,7 @@ export const WithHeaderTitle: Story = {
   }
 };
 
-export const WithHeaderNode: Story = {
+export const CardWithHeaderNode: Story = {
   args: {
     bgColor: "#EAEFF6",
     borderColor: "#D4DFEF",
@@ -96,7 +96,6 @@ export const WithHeaderNode: Story = {
             </IconButton>
           }
           title="Card Header"
-          // subheader="September 14, 2016"
         />
       </>
     ),
@@ -105,7 +104,7 @@ export const WithHeaderNode: Story = {
   }
 };
 
-export const WithDefaultBgColor: Story = {
+export const CardWithDefaultBgColor: Story = {
   args: {
     bgColor: "#FFFFFF",
     borderColor: "#D4DFEF",
@@ -127,7 +126,7 @@ export const WithDefaultBgColor: Story = {
   }
 };
 
-export const WithLightBgColor: Story = {
+export const CardWithLightBgColor: Story = {
   args: {
     bgColor: "#FCFCFD",
     borderColor: "#D4DFEF",
@@ -149,7 +148,7 @@ export const WithLightBgColor: Story = {
   }
 };
 
-export const WithDarkBgColor: Story = {
+export const CardWithDarkBgColor: Story = {
   args: {
     bgColor: "#EAEFF6",
     borderColor: "#D4DFEF",
