@@ -2,7 +2,7 @@ import React from "react";
 
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
-import {PlayGround} from "../pages";
+import PlayGround from "../pages/playground";
 
 function App() {
   return (

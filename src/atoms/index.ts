@@ -3,4 +3,4 @@ import Card from "./card";
 import Typography from "./typography";
 import PasswordTextField from "./textfield-password";
 
-export {Button, Typography, PasswordTextField};
+export {Button, Card, Typography, PasswordTextField};
