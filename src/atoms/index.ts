@@ -1,5 +1,5 @@
 import Button from "./button";
-import TextFieldPassword from "./textfield-password";
+import Typography from "./typography";
+import PasswordTextField from "./textfield-password";
 
-export {Button};
-export {TextFieldPassword};
+export {Button, Typography, PasswordTextField};
