@@ -4,7 +4,8 @@ import {
   LocalLibraryOutlined,
   Visibility,
   VisibilityOff,
-  WorkOutlineOutlined
+  WorkOutlineOutlined,
+  EmailOutlined
 } from "@mui/icons-material";
 
 export enum IconType {
@@ -13,7 +14,8 @@ export enum IconType {
   Forward = "forward",
   Library = "library",
   Visibility = "visibility",
-  VisibilityOff = "visibilityoff"
+  VisibilityOff = "visibilityoff",
+  Email = "email"
 }
 
 export const iconLookup: Record<IconType, typeof AddOutlined> = {
@@ -23,4 +25,5 @@ export const iconLookup: Record<IconType, typeof AddOutlined> = {
   library: LocalLibraryOutlined,
   visibility: Visibility,
   visibilityoff: VisibilityOff,
+  email: EmailOutlined
 };
