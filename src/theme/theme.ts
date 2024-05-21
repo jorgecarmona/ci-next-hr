@@ -7,6 +7,9 @@ const nextHrTheme = createTheme({
     },
     secondary: {
       main: "#344054"
+    },
+    info: {
+      main: "#B42318"
     }
   },
   typography: {
@@ -47,6 +50,40 @@ const nextHrTheme = createTheme({
         },
         containedSecondary: {
           color: "#ffffff" // Ensures text color is white for secondary
+        }
+      }
+    },
+    MuiIcon: {
+      styleOverrides: {
+       root: {
+          borderWidth: "1.10px",
+          borderRadius: "50%",
+          display: "inline-flex", 
+          alignItems: "center", 
+          justifyContent: "center", 
+          width: "48px", 
+          height: "48px", 
+          "&.delete": {
+            backgroundColor: "#FEF3F2",
+            color: "#D92D20",
+            borderRadius: "0" 
+          },
+          "&.work": {
+            backgroundColor: "#F0F9FF",
+            color: "#2E90FA"
+          },
+          "&.article": {
+            backgroundColor: "#FFFAEB",
+            color: "#F79009"
+          },
+          "&.live": {
+            backgroundColor: "#ECFDF3",
+            color: "#12B76A"
+          },
+          "&.library": {
+            backgroundColor: "#F4F3FF",
+            color: "#7A5AF8"
+          }
         }
       }
     }
