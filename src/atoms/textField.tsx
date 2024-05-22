@@ -37,7 +37,7 @@ function TextField({error,fullWidth,helperText,icon,label,onChangeTextField,plac
 
     return(
         <>
-            <InputLabel required={false} style={{paddingLeft:"10px"}}>
+            <InputLabel htmlFor="TextField" required={false} style={{paddingLeft:"10px"}}>
                 {label} {required && <span style={{color: "red"}}>*</span>}
             </InputLabel>
             <MuiTextField 
