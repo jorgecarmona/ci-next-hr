@@ -16,8 +16,10 @@ describe("Chip Component", () => {
   it("calls onClick callback function when clicked", () => {
     const handleClick = jest.fn();
     render(<Chip label="Clickable Chip" onClick={handleClick} />);
+    
     const chip = screen.getByRole("button", { name: "Clickable Chip" });
     userEvent.click(chip);
+   
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
 
@@ -25,7 +27,6 @@ describe("Chip Component", () => {
     const handleDelete = jest.fn();
     render(<Chip label="Clickable Chip" onDelete={handleDelete} />);
     
-    // Usamos getByTestId para encontrar el ícono de eliminación
     const deleteIcon = screen.getByTestId("CancelIcon");
     userEvent.click(deleteIcon);
     
@@ -45,4 +46,90 @@ describe("Chip Component", () => {
     userEvent.click(deleteIcon);
     expect(handleDelete).toHaveBeenCalledTimes(1);
   });
+
+  it("renders with primary color and filled variant for pending type", () => {
+    render(<Chip label="Pending Chip" type="pending" clickable />);
+    
+    const chip = screen.getByRole("button", { name: "Pending Chip" });
+    expect(chip).toHaveClass("MuiChip-filledPrimary");
+  });
+
+  it("renders with secondary color and filled variant for open type", () => {
+    render(<Chip label="Open Chip" type="open" clickable />);
+    
+    const chip = screen.getByRole("button", { name: "Open Chip" });
+    expect(chip).toHaveClass("MuiChip-filledSecondary");
+  });
+
+  it("renders with primary color and outlined variant for rejected type", () => {
+    render(<Chip label="Rejected Chip" type="rejected" clickable />);
+    
+    const chip = screen.getByRole("button", { name: "Rejected Chip" });
+    expect(chip).toHaveClass("MuiChip-outlinedPrimary");
+  });
+
+  it("renders with primary color and filled variant for approved type", () => {
+    render(<Chip label="Approved Chip" type="approved" clickable />);
+    
+    const chip = screen.getByRole("button", { name: "Approved Chip" });
+    expect(chip).toHaveClass("MuiChip-filledPrimary");
+  });
+
+  it("renders with secondary color and filled variant for denied type", () => {
+    render(<Chip label="Denied Chip" type="denied" clickable />);
+    
+    const chip = screen.getByRole("button", { name: "Denied Chip" });
+    expect(chip).toHaveClass("MuiChip-filledSecondary");
+  });
+
+  it("renders with primary color and outlined variant for enabled type", () => {
+    render(<Chip label="Enabled Chip" type="enabled" clickable />);
+    
+    const chip = screen.getByRole("button", { name: "Enabled Chip" });
+    expect(chip).toHaveClass("MuiChip-outlinedPrimary");
+  });
+
+  it("renders with primary color and outlined variant for disabled type", () => {
+    render(<Chip label="Disabled Chip" type="disabled" clickable />);
+    
+    const chip = screen.getByRole("button", { name: "Disabled Chip" });
+    expect(chip).toHaveClass("MuiChip-outlinedPrimary");
+  });
+
+  // it("renders with secondary color and filled variant for open type", () => {
+  //   const { container } = render(<Chip label="Open Chip" type="open" />);
+  //   const chip = container.querySelector('.MuiChip-root');
+  //   expect(chip).toHaveClass("MuiChip-filledSecondary");
+  // });
+
+  // it("renders with primary color and outlined variant for rejected type", () => {
+  //   const { container } = render(<Chip label="Rejected Chip" type="rejected" />);
+  //   const chip = container.querySelector('.MuiChip-root');
+  //   expect(chip).toHaveClass("MuiChip-outlinedPrimary");
+  // });
+
+  // it("renders with primary color and filled variant for approved type", () => {
+  //   const { container } = render(<Chip label="Approved Chip" type="approved" />);
+  //   const chip = container.querySelector('.MuiChip-root');
+  //   expect(chip).toHaveClass("MuiChip-filledPrimary");
+  // });
+
+  // it("renders with secondary color and filled variant for denied type", () => {
+  //   const { container } = render(<Chip label="Denied Chip" type="denied" />);
+  //   const chip = container.querySelector('.MuiChip-root');
+  //   expect(chip).toHaveClass("MuiChip-filledSecondary");
+  // });
+
+  // it("renders with primary color and outlined variant for enabled type", () => {
+  //   const { container } = render(<Chip label="Enabled Chip" type="enabled" />);
+  //   const chip = container.querySelector('.MuiChip-root');
+  //   expect(chip).toHaveClass("MuiChip-outlinedPrimary");
+  // });
+
+  // it("renders with primary color and outlined variant for disabled type", () => {
+  //   const { container } = render(<Chip label="Disabled Chip" type="disabled" />);
+  //   const chip = container.querySelector('.MuiChip-root');
+  //   expect(chip).toHaveClass("MuiChip-outlinedPrimary");
+  // });
+
 });
