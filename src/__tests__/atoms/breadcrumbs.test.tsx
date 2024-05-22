@@ -20,10 +20,13 @@ describe("BreadCrumbs Component", () => {
             expect(linkElement.getAttribute('href')).toBe(item.path);
         });
     });
-    // it("renders breadcrumbs with correct separator", () => {
-    //     render(<BreadCrumbs separator=">" items={mockItems}/>);
-    
-    //     const separatorElement = screen.getByText(/\>/);
-    //     expect(separatorElement).toBeInTheDocument();
-    // });
+    it("renders breadcrumb elements with correct text and href attributes", () => {
+        render(<BreadCrumbs separator=">" items={mockItems} />);
+
+        mockItems.forEach(item => {
+            const linkElement = screen.getByText(item.label);
+            expect(linkElement).toBeInTheDocument();
+            expect(linkElement.getAttribute('href')).toBe(item.path);
+        });
+    });
 });
