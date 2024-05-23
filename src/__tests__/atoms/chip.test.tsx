@@ -96,40 +96,4 @@ describe("Chip Component", () => {
     expect(chip).toHaveClass("MuiChip-outlinedPrimary");
   });
 
-  // it("renders with secondary color and filled variant for open type", () => {
-  //   const { container } = render(<Chip label="Open Chip" type="open" />);
-  //   const chip = container.querySelector('.MuiChip-root');
-  //   expect(chip).toHaveClass("MuiChip-filledSecondary");
-  // });
-
-  // it("renders with primary color and outlined variant for rejected type", () => {
-  //   const { container } = render(<Chip label="Rejected Chip" type="rejected" />);
-  //   const chip = container.querySelector('.MuiChip-root');
-  //   expect(chip).toHaveClass("MuiChip-outlinedPrimary");
-  // });
-
-  // it("renders with primary color and filled variant for approved type", () => {
-  //   const { container } = render(<Chip label="Approved Chip" type="approved" />);
-  //   const chip = container.querySelector('.MuiChip-root');
-  //   expect(chip).toHaveClass("MuiChip-filledPrimary");
-  // });
-
-  // it("renders with secondary color and filled variant for denied type", () => {
-  //   const { container } = render(<Chip label="Denied Chip" type="denied" />);
-  //   const chip = container.querySelector('.MuiChip-root');
-  //   expect(chip).toHaveClass("MuiChip-filledSecondary");
-  // });
-
-  // it("renders with primary color and outlined variant for enabled type", () => {
-  //   const { container } = render(<Chip label="Enabled Chip" type="enabled" />);
-  //   const chip = container.querySelector('.MuiChip-root');
-  //   expect(chip).toHaveClass("MuiChip-outlinedPrimary");
-  // });
-
-  // it("renders with primary color and outlined variant for disabled type", () => {
-  //   const { container } = render(<Chip label="Disabled Chip" type="disabled" />);
-  //   const chip = container.querySelector('.MuiChip-root');
-  //   expect(chip).toHaveClass("MuiChip-outlinedPrimary");
-  // });
-
 });
