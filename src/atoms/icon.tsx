@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 import { Badge, Icon as MuiIcon, IconProps as MuiIconProps } from '@mui/material';
 
 import { iconLookup } from './icon-store';
@@ -49,7 +48,7 @@ function Icon ({ color, name, hasNotifications, shape, ...props }:IconProps) {
   }
 
   return (
-    <MuiIcon {...iconProps}>
+    <MuiIcon {...iconProps} data-testid='name'>
       <IconComponent />
     </MuiIcon>
   );
