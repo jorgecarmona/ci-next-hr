@@ -7,10 +7,10 @@ describe("TextField Component", () => {
     it('renders the label correctly', () => {
         render(<TextField label="Name" value=""
         onChangeTextField={() => {}}/>);
+
         const labelElement = screen.getByText(/Name/i);
         expect(labelElement).toBeInTheDocument();
     });
-});
 
     it('displays the required asterisk when required is true', () => {
         render(<TextField 
@@ -18,6 +18,7 @@ describe("TextField Component", () => {
             required 
             value=""
             onChangeTextField={() => {}}/>);
+
         const asteriskElement = screen.getByText('*');
         expect(asteriskElement).toBeInTheDocument();
         expect(asteriskElement).toHaveStyle({ color: 'red' });
@@ -40,6 +41,7 @@ describe("TextField Component", () => {
             icon={false} 
             value=""
             onChangeTextField={() => {}}/>);
+
         const iconElement = screen.queryByRole('button');
         expect(iconElement).toBeNull();
 });
@@ -50,6 +52,7 @@ describe("TextField Component", () => {
             helperText="This is a helper text" 
             value=""
             onChangeTextField={() => {}}/>);
+
         const helperTextElement = screen.getByText(/This is a helper text/i);
         expect(helperTextElement).toBeInTheDocument();
 });
@@ -67,6 +70,6 @@ describe("TextField Component", () => {
 
         const inputElement = screen.getByLabelText('Name');
         await userEvent.type(inputElement, 'newText');
-
         expect(handleTextFieldChangeMock).toHaveBeenCalledTimes(7);
     });
+});
