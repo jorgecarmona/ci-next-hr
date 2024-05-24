@@ -1,8 +1,7 @@
 import Button from "./button";
 import Card from "./card";
-import Typography from "./typography";
 import TextFieldPassword from "./textfield-password";
+import ToolbarButton from "./toolbar-button";
+import Typography from "./typography";
 
-export {Button, Typography};
-
-export {TextFieldPassword, Card};
+export {Button, Card, TextFieldPassword, Typography, ToolbarButton};
