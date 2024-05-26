@@ -11,15 +11,6 @@ const mockItems = [
 ];
 
 describe("BreadCrumbs Component", () => {
-    it("renders each breadcrumb element is present on the page", () => {
-        render(<BreadCrumbs separator=">" items={mockItems}/>);
-        
-        mockItems.forEach(item => {
-            const linkElement = screen.getByText(item.label);
-            expect(linkElement).toBeInTheDocument();
-            expect(linkElement.getAttribute('href')).toBe(item.path);
-        });
-    });
     it("renders breadcrumb elements with correct text and href attributes", () => {
         render(<BreadCrumbs separator=">" items={mockItems} />);
 
@@ -28,5 +19,31 @@ describe("BreadCrumbs Component", () => {
             expect(linkElement).toBeInTheDocument();
             expect(linkElement.getAttribute('href')).toBe(item.path);
         });
+    });
+    
+    it('renders custom separator correctly', () => {
+        const separator = '>';
+        render(<BreadCrumbs separator={separator} items={mockItems} />);
+        const breadcrumbsContainer = screen.getByTestId('breadcrumbs-container');
+
+        expect(breadcrumbsContainer.textContent).toContain(separator);
+    });
+
+    
+    it('renders item with no path', () => {
+        const itemsWithNoPath = [
+            { label: 'Home' },
+            { label: 'About', path: '/about' },
+        ];
+        render(<BreadCrumbs separator=">" items={itemsWithNoPath} />);
+        const linkElementWithoutPath = screen.getByText('Home');
+        
+        expect(linkElementWithoutPath).toBeInTheDocument();
+        expect(linkElementWithoutPath.getAttribute('href')).toBe('#');
+    });
+
+    it('renders without items', () => {
+        const { container } = render(<BreadCrumbs separator=">" items={[]} />);
+        expect(container).toBeEmptyDOMElement();
     });
 });
