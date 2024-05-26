@@ -13,10 +13,14 @@ interface BreadcrumbProps extends MuiBreadcrumbsProps {
 }
 
 function BreadCrumbs({ separator, items }: BreadcrumbProps) {
+    if (items.length === 0) {
+        return null; // No renderiza nada si no hay items
+    }
+
     return (
-        <MuiBreadcrumbs separator={separator}>
+        <MuiBreadcrumbs separator={separator} data-testid="breadcrumbs-container">
             {items.map((item, index) => (
-                <Link key={index} href={item.path} underline="hover" color="inherit" >
+                <Link key={index} href={item.path ?? '#'} underline="hover" color="inherit" >
                 {item.label}
                 </Link>
             ))}
