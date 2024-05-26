@@ -1,26 +1,22 @@
 import React from 'react';
 
-import { Autocomplete as MuiAutocomplete, TextField, InputLabel} from '@mui/material';
-
+import { Autocomplete as MuiAutocomplete, InputLabel, TextField} from '@mui/material';
 interface OptionType {
   label: string;
   value: string;
 }
-
 interface AutocompleteProps {
-  value: string;
-  id: string;
-  options: OptionType[];
-  required?: boolean;
-  helperText?: string;
   error?: boolean;
   errorHelperText?: string;
-  label?: string; 
+  helperText?: string;
+  id: string;
+  label?: string;
+  options: OptionType[];
+  required?: boolean;
+  value: string;
 }
 
-
-
-function Autocomplete ({ value, id, options, helperText, error, errorHelperText, required, label}: AutocompleteProps) {
+function Autocomplete ({ error, errorHelperText, helperText, id, label, options, required, value}: AutocompleteProps) {
   const [inputValue, setInputValue] = React.useState(value);
 
   let newHelperText = helperText;

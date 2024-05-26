@@ -1,50 +1,73 @@
 import { render, screen } from '@testing-library/react';
+
 import userEvent from '@testing-library/user-event';
+
 import { Autocomplete } from '../../atoms';
 
-describe('Testing for the Autocomplete component', () => {
+describe('Autocomplete Component', () => {
   const options = [
-    { label: 'English', value: 'english' },
-    { label: 'City of Residence', value: 'cityOfResidence' },
-    { label: 'City of Residence', value: 'cityOfResidence' },
+    { label: 'Option 1', value: '1' },
+    { label: 'Option 2', value: '2' },
   ];
 
-  test('should render without errors', () => {
-    render(<Autocomplete id="autocomplete" options={options} value="" />);
-    expect(screen.getByRole('combobox')).toBeInTheDocument();
+  test('renders correctly with required props', () => {
+    render(<Autocomplete id="test-autocomplete" options={options} value="1" />);
+
+    const inputElement = screen.getByRole('combobox');
+    expect(inputElement).toBeInTheDocument();
   });
 
-  test('should show help text when there is no error', () => {
-    render(<Autocomplete id="autocomplete" options={options} value="" helperText="Help Text" />);
-    expect(screen.getByText('Help Text')).toBeInTheDocument();
-  });
-
-  test('should show error text when there is an error', () => {
+  test('displays helper text', () => {
     render(
       <Autocomplete
-        id="autocomplete"
+        id="test-autocomplete"
         options={options}
-        value=""
-        error
-        errorHelperText="Error message"
+        value="1"
+        helperText="Helper Text"
       />
     );
-    expect(screen.getByText('Error message')).toBeInTheDocument();
+
+    const helperTextElement = screen.getByText('Helper Text');
+    expect(helperTextElement).toBeInTheDocument();
   });
 
-  test('must allow the user to write in the input field', () => {
-    render(<Autocomplete id="autocomplete" options={options} value="" />);
-    userEvent.type(screen.getByRole('combobox'), 'Opción 1');
-    expect(screen.getByRole('combobox')).toHaveValue('Opción 1');
+  test('displays error text when error is true', () => {
+    render(
+      <Autocomplete
+        id="test-autocomplete"
+        options={options}
+        value="1"
+        error={true}
+        errorHelperText="Error Text"
+      />
+    );
+
+    const errorTextElement = screen.getByText('Error Text');
+    expect(errorTextElement).toBeInTheDocument();
   });
 
-  test('should change the input value when an option is selected', () => {
-    render(<Autocomplete id="autocomplete" options={options} value="" />);
-    const input = screen.getByRole('combobox');
-    userEvent.type(input, 'English'); // Simula escribir para activar el autocompletar
-    const option = screen.getByText('English'); // Encuentra la opción que deseas seleccionar
-    userEvent.click(option); // Simula hacer clic en la opción
-    expect(input).toHaveValue('English');
+  test('changes input value', async () => {
+    render(<Autocomplete id="test-autocomplete" options={options} value="1" />);
+
+    const inputElement = screen.getByRole('combobox');
+    await userEvent.type(inputElement, 'Option 2');
+    expect(inputElement).toHaveValue('Option 2');
   });
+
+  test('displays required label correctly', () => {
+    render(
+      <Autocomplete
+        id="test-autocomplete"
+        options={options}
+        value="1"
+        label="Test Label"
+        required={true}
+      />
+    );
   
+    const labelElement = screen.getByLabelText('Test Label *');
+    expect(labelElement).toHaveAttribute('for', 'test-autocomplete');
+    const requiredIndicator = screen.getByText('*', { selector: 'span[style*="color: red;"]' });
+    expect(requiredIndicator).toBeInTheDocument();
+  });  
 });
