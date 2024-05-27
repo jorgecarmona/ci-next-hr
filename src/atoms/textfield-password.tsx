@@ -1,30 +1,29 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
 
 import { iconLookup } from "./icon-store";
-import { IconButton, InputAdornment, TextField } from "@mui/material";
+import { IconButton, InputAdornment, TextField, InputLabel } from "@mui/material";
 
 interface PasswordProps {
     error?: boolean;
     errorHelperText?: string;
     fullWidth?: boolean;
-    handlePassword: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    onChangeCallback: (value: string) => void;
     helperText?: string;
     icon?: boolean
     label: string;
-    password: string;
+    required?: boolean
+    value: string;
 }
 
-function PasswordTextField({fullWidth = false, label, password, handlePassword, helperText, error, errorHelperText, icon}: PasswordProps) {
+function PasswordTextField({fullWidth = false, label, onChangeCallback, helperText, error, errorHelperText, icon, required, value}: PasswordProps) {
     const [showPassword, setShowPassword] = React.useState<boolean>(false);
 
     const handleClickShowPassword = () => {
         setShowPassword(!showPassword);
     };
 
-    const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        handlePassword(event);
-    };
-
+    const handleChange = (e:ChangeEvent<HTMLInputElement>) => onChangeCallback(e.target.value);
+    
     const renderPasswordIcon = () => {
         if (icon) {
             return (
@@ -49,25 +48,26 @@ function PasswordTextField({fullWidth = false, label, password, handlePassword, 
     }
 
     return (
-        <TextField
-            fullWidth={fullWidth}
-            size="small"
-            type={showPassword ? "text" : "password"}
-            label={label}
-            value={password}
-            onChange={handlePasswordChange}
-            helperText={newHelperText} 
-            error={Boolean(error)} 
-            InputProps={{
-            endAdornment: renderPasswordIcon(),
-            }}
-        />
+        <form onSubmit={(e) => { e.preventDefault() }}>
+            <InputLabel htmlFor="Password" required={false}>
+                {label} {required && <span style={{ color: "red" }}>*</span>}
+            </InputLabel>
+            <TextField
+                error={Boolean(error)}
+                fullWidth={fullWidth}
+                helperText={newHelperText}
+                id="Password"
+                InputProps={{
+                endAdornment: renderPasswordIcon(),
+                }}
+                onChange={handleChange}
+                required={required}
+                size="small"
+                type={showPassword ? "text" : "password"}
+                value={value}
+            />
+        </form>
     );
 }
 
 export default PasswordTextField;
-
-
-
-
-
