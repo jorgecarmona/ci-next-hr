@@ -31,18 +31,18 @@ export const AvatarProfile: Story = {
 
 
 export const AvatarFriends: Story = {
-  args:{
-    alt:"avatar friends",
-    src: {avatarFriends},
+  args: {
+    alt: "avatar friends",
+    src: avatarFriends,
     width: 651,
-    height:407
+    height: 407
   }
-}
+};
 
 export const AvatarGroup: Story = {
   args:{
     alt:"avatar group",
-    src: "avatarGroup",
+    src: avatarGroup,
     width: 612,
     height:347
   }
@@ -51,7 +51,7 @@ export const AvatarGroup: Story = {
 export const AvatarFamily: Story = {
   args:{
     alt:"avatar family",
-    src: "avatarFamily",
+    src: avatarFamily,
     width: 592,
     height:422
   }
@@ -60,7 +60,7 @@ export const AvatarFamily: Story = {
 export const AvatarFather: Story = {
   args:{
     alt:"avatar father",
-    src: "avatarFather",
+    src: avatarFather,
     width: 476,
     height:476
   }
