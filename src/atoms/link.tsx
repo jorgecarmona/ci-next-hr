@@ -1,14 +1,12 @@
-import React from 'react';
-
 import Link from '@mui/material/Link';
 
 interface UnderlineLinkProps {
     children: string;
-    linkType: 'primary' | 'secondary' | 'default';
-    underline: 'none' | 'hover' | 'always';
+    linkType?: 'primary' | 'secondary' | 'default';
+    underline?: 'none' | 'hover' | 'always';
 }
 
-function UnderlineLink({ children, linkType, underline }: UnderlineLinkProps) {
+function UnderlineLink({ children, linkType = 'default', underline = 'none' }: UnderlineLinkProps) {
     let Text = "Don't have an account?";
 
     return (
