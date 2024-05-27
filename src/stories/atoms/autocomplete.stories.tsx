@@ -2,7 +2,6 @@ import { Meta, StoryObj } from "@storybook/react";
 
 import { Autocomplete } from "../../atoms";
 
-// Define el tipo para las historias del componente Autocomplete
 type Story = StoryObj<typeof Autocomplete>;
 
 export default {
@@ -14,7 +13,6 @@ export default {
     }
 } as Meta<typeof Autocomplete>;
 
-// Usa el tipo Story para definir las historias
 export const Default: Story = {
     args: {
         id: 'my-id',
