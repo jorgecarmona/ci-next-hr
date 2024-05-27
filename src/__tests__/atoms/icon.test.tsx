@@ -11,7 +11,6 @@ describe('Icon', () => {
   });
 
   it('sets square shape when name is "delete"', () => {
-    // Arrange
     const props = {
       className: 'custom-class',
       style: {
@@ -19,7 +18,6 @@ describe('Icon', () => {
       },
     };
     render(<Icon name="delete" {...props} />);
-  
     const iconElement = screen.getByTestId('name');
   
     expect(iconElement).not.toHaveStyle('borderRadius: 50%');

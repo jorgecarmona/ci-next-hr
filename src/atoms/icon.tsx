@@ -31,21 +31,14 @@ function Icon ({ color, name, hasNotifications, shape, ...props }:IconProps) {
 
   if (hasNotifications && name === 'notifications') {
     return (
-      <div style={{ position: 'relative', display: 'inline-flex' }}>
-      <MuiIcon {...iconProps}>
-        <IconComponent />
-      </MuiIcon>
-      <Badge 
-        variant="dot" 
-        color="info" 
-        anchorOrigin={{ vertical: 'top', horizontal: 'right' }} 
-        style={{ position: 'absolute', top: 0, right: 0 }}
-      >
-        <span />
-      </Badge>
-    </div>
-    );
-  }
+    <>
+    <MuiIcon>
+    <Badge variant="dot" color="error" overlap="circular">
+    <IconComponent />
+    </Badge>
+    </MuiIcon>
+    </>
+  )}
 
   return (
     <MuiIcon {...iconProps} data-testid='name'>
