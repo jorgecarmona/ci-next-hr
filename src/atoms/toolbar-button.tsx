@@ -2,7 +2,7 @@ import {Button} from "../atoms";
 import {ButtonProps} from "./button";
 
 function ToolbarButton({children, icon, onClick, selected}: ButtonProps) {
-  let underline;
+  let underline = {};
 
   if (selected) {
     underline = {borderBottom: "1px solid #175CD3", paddingBottom: "8px"};
