@@ -1,4 +1,3 @@
-import React from 'react';
 import {Breadcrumbs as MuiBreadcrumbs, BreadcrumbsProps as MuiBreadcrumbsProps} from '@mui/material';
 import Link from '@mui/material/Link';
 
@@ -12,7 +11,7 @@ interface BreadcrumbProps extends MuiBreadcrumbsProps {
     items: NavigationItem[];
 }
 
-function BreadCrumbs({ separator, items }: BreadcrumbProps) {
+function BreadCrumbs({ separator = '>', items }: BreadcrumbProps) {
     if (items.length === 0) {
         return null; // No renderiza nada si no hay items
     }
