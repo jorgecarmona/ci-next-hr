@@ -1,5 +1,4 @@
 import {render, screen} from "@testing-library/react";
-
 import { BreadCrumbs } from "../../atoms";
 
 const mockItems = [
@@ -21,15 +20,6 @@ describe("BreadCrumbs Component", () => {
         });
     });
     
-    it('renders custom separator correctly', () => {
-        const separator = '>';
-        render(<BreadCrumbs separator={separator} items={mockItems} />);
-        const breadcrumbsContainer = screen.getByTestId('breadcrumbs-container');
-
-        expect(breadcrumbsContainer.textContent).toContain(separator);
-    });
-
-    
     it('renders item with no path', () => {
         const itemsWithNoPath = [
             { label: 'Home' },
@@ -45,5 +35,26 @@ describe("BreadCrumbs Component", () => {
     it('renders without items', () => {
         const { container } = render(<BreadCrumbs separator=">" items={[]} />);
         expect(container).toBeEmptyDOMElement();
+    });
+
+    it('uses default separator when none is provided', () => {
+        render(<BreadCrumbs items={mockItems} />);
+
+        const breadcrumbsContainer = screen.getByTestId('breadcrumbs-container');
+        expect(breadcrumbsContainer.textContent).toContain('>');
+
+        mockItems.forEach(item => {
+            const linkElement = screen.getByText(item.label);
+            expect(linkElement).toBeInTheDocument();
+            expect(linkElement.getAttribute('href')).toBe(item.path);
+        });
+    });
+
+    it('renders custom separator correctly', () => {
+        const separator = '>';
+        render(<BreadCrumbs separator={separator} items={mockItems} />);
+        const breadcrumbsContainer = screen.getByTestId('breadcrumbs-container');
+
+        expect(breadcrumbsContainer.textContent).toContain(separator);
     });
 });
