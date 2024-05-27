@@ -2,6 +2,9 @@ import { Meta, StoryObj } from "@storybook/react";
 
 import { Autocomplete } from "../../atoms";
 
+// Define el tipo para las historias del componente Autocomplete
+type Story = StoryObj<typeof Autocomplete>;
+
 export default {
     title: 'Atoms/Autocomplete',
     component: Autocomplete,
@@ -11,34 +14,31 @@ export default {
     }
 } as Meta<typeof Autocomplete>;
 
-
-
-export const Default: StoryObj<typeof Autocomplete> = {
+// Usa el tipo Story para definir las historias
+export const Default: Story = {
     args: {
         id: 'my-id',
         value: 'English',
         options: [
-            {label: 'English', value: 'english'}
+            { label: 'English', value: 'english' }
         ],
     }
 }
 
-
-export const HintText: StoryObj<typeof Autocomplete> = {
+export const HintText: Story = {
     args: {
         id: 'my-id',
         value: 'Option 2',
         options: [
-            {label: 'City of Residence', value: 'cityOfResidence'}
+            { label: 'City of Residence', value: 'cityOfResidence' }
         ],
         helperText: 'This is a hint to help user.',
         label: 'Rule',
         required: true,
     }
-
 }
 
-export const RequiredWithErrors: StoryObj<typeof Autocomplete> = {
+export const RequiredWithErrors: Story = {
     args: {
         id: 'my-id',
         value: '',
