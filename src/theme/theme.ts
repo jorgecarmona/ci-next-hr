@@ -1,5 +1,4 @@
-import {createTheme} from "@mui/material";
-
+import { createTheme } from "@mui/material";
 const nextHrTheme = createTheme({
   palette: {
     primary: {
@@ -8,8 +7,14 @@ const nextHrTheme = createTheme({
     secondary: {
       main: "#344054"
     },
-    info: {
+    success: {
+      main: "#027A48"
+    },
+    error: {
       main: "#B42318"
+    },
+    warning: {
+      main: "#FFA000"
     }
   },
   typography: {
@@ -17,6 +22,18 @@ const nextHrTheme = createTheme({
     fontWeightMedium: 400
   },
   components: {
+    MuiAvatar: {
+      styleOverrides: {
+        root: {
+          "&.profile": {
+            fontSize: "1rem",
+            fontWeight: 500,
+            backgroundColor: "#072136",
+            color: "#FFFFFF"
+          }
+        }
+      }
+    },
     MuiButton: {
       styleOverrides: {
         root: {
@@ -43,47 +60,13 @@ const nextHrTheme = createTheme({
           }
         },
         text: {
-          color: "#475467" // Red text for text variant buttons
+          color: "#475467"
         },
         containedPrimary: {
-          color: "#ffffff" // Ensures text color is white for primary
+          color: "#FFFFFF"
         },
         containedSecondary: {
-          color: "#ffffff" // Ensures text color is white for secondary
-        }
-      }
-    },
-    MuiIcon: {
-      styleOverrides: {
-       root: {
-          borderWidth: "1.10px",
-          borderRadius: "50%",
-          display: "inline-flex", 
-          alignItems: "center", 
-          justifyContent: "center", 
-          width: "48px", 
-          height: "48px", 
-          "&.delete": {
-            backgroundColor: "#FEF3F2",
-            color: "#D92D20",
-            borderRadius: "0" 
-          },
-          "&.work": {
-            backgroundColor: "#F0F9FF",
-            color: "#2E90FA"
-          },
-          "&.article": {
-            backgroundColor: "#FFFAEB",
-            color: "#F79009"
-          },
-          "&.live": {
-            backgroundColor: "#ECFDF3",
-            color: "#12B76A"
-          },
-          "&.library": {
-            backgroundColor: "#F4F3FF",
-            color: "#7A5AF8"
-          }
+          color: "#FFFFFF"
         }
       }
     },
@@ -125,6 +108,47 @@ const nextHrTheme = createTheme({
         }
       }
     },
+    MuiChip: {
+      styleOverrides: {
+        root: {
+          fontFamily: "Poppins, sans-serif",
+          fontWeight: 500,
+          borderWidth: "1.10px",
+          "&.pending": {
+            backgroundColor: "#EFF8FF",
+            color: "#175CD3"
+          },
+          "&.open": {
+            backgroundColor: "#F4F3FF",
+            color: "#5925DC"
+          },
+          "&.approved": {
+            backgroundColor: "#ECFDF3",
+            color: "#027A48"
+          },
+          "&.denied": {
+            backgroundColor: "#FEF3F2",
+            color: "#B42318"
+          },
+          "&.enabled": {
+            borderColor: "#027A48",
+            color: "#027A48"
+          },
+          "&.rejected": {
+            borderColor: "#D92D20",
+            color: "#D92D20"
+          },
+          "&.disabled": {
+            borderColor: "#E7A63F",
+            color: "#E7A63F"
+          },
+          "&.default": {
+            backgroundColor: "#EAECF0",
+            color: "#000000"
+          }
+        }
+      }
+    },
     MuiTypography: {
       styleOverrides: {
         root: {
@@ -160,8 +184,7 @@ const nextHrTheme = createTheme({
           lineHeight: "1.5rem"
         }
       }
-    }
+    },
   }
 });
-
 export default nextHrTheme;
