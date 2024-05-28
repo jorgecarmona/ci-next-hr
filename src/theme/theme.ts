@@ -1,4 +1,4 @@
-import {createTheme} from "@mui/material";
+import { createTheme } from "@mui/material";
 
 const nextHrTheme = createTheme({
   palette: {
@@ -7,6 +7,15 @@ const nextHrTheme = createTheme({
     },
     secondary: {
       main: "#344054"
+    },
+    success: {
+      main: "#027A48" 
+    },
+    error: {
+      main: "#b42318" 
+    },
+    warning: {
+      main: "#FFA000" 
     }
   },
   typography: {
@@ -40,13 +49,128 @@ const nextHrTheme = createTheme({
           }
         },
         text: {
-          color: "#475467" // Red text for text variant buttons
+          color: "#475467" 
         },
         containedPrimary: {
-          color: "#ffffff" // Ensures text color is white for primary
+          color: "#ffffff" 
         },
         containedSecondary: {
-          color: "#ffffff" // Ensures text color is white for secondary
+          color: "#ffffff" 
+        }
+      }
+    },
+    MuiChip: {
+      styleOverrides: {
+        root: {
+          fontFamily: "Poppins, sans-serif",
+          fontWeight: 500,
+          borderWidth: "1.10px",
+          "&.pending": {
+            backgroundColor: "#EFF8FF",
+            color: "#175CD3"
+          },
+          "&.open": {
+            backgroundColor: "#F4F3FF",
+            color: "#5925DC"
+          },
+          "&.approved": {
+            backgroundColor: "#ECFDF3",
+            color: "#027A48"
+          },
+          "&.denied": {
+            backgroundColor: "#FEF3F2",
+            color: "#b42318"
+          },
+          "&.enabled": {
+            borderColor: "#027A48", 
+            color: "#027a48" 
+          },
+          "&.rejected": {
+            borderColor: "#D92D20", 
+            color: "#D92D20" 
+          },
+          "&.disabled": {
+            borderColor: "#E7A63F", 
+            color: "#E7A63F" 
+          },
+          "&.default": {
+            backgroundColor: "#EAECF0",
+            color: "#000000"
+          }
+        }
+      }
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          borderWidth: "1px",
+          fontFamily: "Poppins, sans-serif",
+          padding: "16px"
+        }
+      }
+    },
+    MuiCardActions: {
+      styleOverrides: {
+        root: {
+          padding: "0"
+        }
+      }
+    },
+    MuiCardContent: {
+      styleOverrides: {
+        root: {
+          padding: "0"
+        }
+      }
+    },
+    MuiCardHeader: {
+      styleOverrides: {
+        root: {
+          padding: "0",
+          marginBottom: "16px"
+        },
+        title: {
+          color: "#000000",
+          fontSize: "14px",
+          fontWeight: "600",
+          lineHeight: "20px",
+          textAlign: "left"
+        }
+      }
+    },
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          fontWeight: 500
+        },
+        body1: {
+          fontWeight: 400,
+          fontSize: "1rem",
+          lineHeight: "1.5rem"
+        },
+        h1: {
+          fontSize: "2.25rem",
+          lineHeight: "2.75rem"
+        },
+        h2: {
+          fontSize: "2rem",
+          lineHeight: "2.5rem"
+        },
+        h3: {
+          fontSize: "1.5rem",
+          lineHeight: "2.25rem"
+        },
+        h4: {
+          fontSize: "1.25rem",
+          lineHeight: "1.875rem"
+        },
+        h5: {
+          fontSize: "1.125rem",
+          lineHeight: "1.75rem"
+        },
+        h6: {
+          fontSize: "1rem",
+          lineHeight: "1.5rem"
         }
       }
     },
