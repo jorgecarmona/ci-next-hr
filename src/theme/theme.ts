@@ -1,6 +1,5 @@
 import {createTheme} from "@mui/material";
 
-
 const nextHrTheme = createTheme({
   palette: {
     primary: {
@@ -53,17 +52,13 @@ const nextHrTheme = createTheme({
     },
     MuiAvatar: {
       styleOverrides: {
-       root: {
-          borderWidth: "1.10px",
-          borderRadius: "50%",
-          display: "inline-flex", 
-          alignItems: "center", 
-          justifyContent: "center",  
+        root: {
           "&.profile": {
+            fontSize: "1rem",
+            fontWeight: 500,
             backgroundColor: "#072136",
-            color: "#FFFFFF",
-            padding: "5px",
-          },
+            color: "#FFFFFF"
+          }
         }
       }
     }

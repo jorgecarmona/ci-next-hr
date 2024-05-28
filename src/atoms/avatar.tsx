@@ -2,29 +2,35 @@ import React from "react";
 
 import {Avatar as MuiAvatar, AvatarProps as MuiAvatarProps} from "@mui/material";
 
-interface AvatarProps extends MuiAvatarProps {
-  alt?: string;
-  children?: React.ReactNode;
+interface ProfileAvatarProps extends MuiAvatarProps {
+  alt?: never;
+  children: React.ReactNode;
+  height?: never;
+  src?: never;
+  type: "profile";
+  width?: never;
+}
+
+interface DefaultAvatarProps extends MuiAvatarProps {
+  alt: string;
+  children?: never;
   height?: number;
-  src?: string;
-  type?: "profile";
+  src: string;
+  type?: undefined;
   width?: number;
 }
 
-function Avatar({alt, children, height, src, type, width}: AvatarProps) {
-  if (type === "profile" && !children) {
-    console.error("The 'children' property is required when type is 'profile'.");
-  }
+type AvatarProps = ProfileAvatarProps | DefaultAvatarProps;
 
-  const sxProps = type === "profile" ? {} : { width, height };
+function Avatar({children, type}: ProfileAvatarProps): JSX.Element;
+function Avatar({alt, height, src, type, width}: DefaultAvatarProps): JSX.Element;
+
+function Avatar({alt, children, height = 400, src, type, width = 400}: AvatarProps) {
+  const sxProps = type === "profile" ? {} : {width, height};
+  const classname = type === "profile" ? "profile" : "";
 
   return (
-    <MuiAvatar
-      alt={alt}
-      src={src}
-      sx={sxProps}
-      style={{ background: type ? "#072136" : undefined }}
-    >
+    <MuiAvatar alt={alt} src={src} sx={sxProps} className={classname}>
       {type === "profile" ? children : null}
     </MuiAvatar>
   );
