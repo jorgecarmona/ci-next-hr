@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 
-import PasswordTextField from "../../atoms/textfield-password";
+import { PasswordTextField } from "../../atoms";
 
 const meta = {
     title: 'Atoms/PasswordTextField',
