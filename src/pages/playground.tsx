@@ -7,7 +7,11 @@ function PlayGround() {
 
   console.log(data);
 
-  return <h1>PlayGround</h1>;
+  return (
+    <>
+      <h1>PlayGround</h1>
+    </>
+  );
 }
 
 export default PlayGround;
