@@ -1,5 +1,4 @@
 import { createTheme } from "@mui/material";
-
 const nextHrTheme = createTheme({
   palette: {
     primary: {
@@ -9,13 +8,13 @@ const nextHrTheme = createTheme({
       main: "#344054"
     },
     success: {
-      main: "#027A48" 
+      main: "#027A48"
     },
     error: {
-      main: "#b42318" 
+      main: "#B42318"
     },
     warning: {
-      main: "#FFA000" 
+      main: "#FFA000"
     }
   },
   typography: {
@@ -61,13 +60,51 @@ const nextHrTheme = createTheme({
           }
         },
         text: {
-          color: "#475467" 
+          color: "#475467"
         },
         containedPrimary: {
-          color: "#ffffff" 
+          color: "#FFFFFF"
         },
         containedSecondary: {
-          color: "#ffffff" 
+          color: "#FFFFFF"
+        }
+      }
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          borderWidth: "1px",
+          fontFamily: "Poppins, sans-serif",
+          padding: "16px"
+        }
+      }
+    },
+    MuiCardActions: {
+      styleOverrides: {
+        root: {
+          padding: "0"
+        }
+      }
+    },
+    MuiCardContent: {
+      styleOverrides: {
+        root: {
+          padding: "0"
+        }
+      }
+    },
+    MuiCardHeader: {
+      styleOverrides: {
+        root: {
+          padding: "0",
+          marginBottom: "16px"
+        },
+        title: {
+          color: "#000000",
+          fontSize: "14px",
+          fontWeight: "600",
+          lineHeight: "20px",
+          textAlign: "left"
         }
       }
     },
@@ -129,19 +166,19 @@ const nextHrTheme = createTheme({
           },
           "&.denied": {
             backgroundColor: "#FEF3F2",
-            color: "#b42318"
+            color: "#B42318"
           },
           "&.enabled": {
-            borderColor: "#027A48", 
-            color: "#027a48" 
+            borderColor: "#027A48",
+            color: "#027A48"
           },
           "&.rejected": {
-            borderColor: "#D92D20", 
-            color: "#D92D20" 
+            borderColor: "#D92D20",
+            color: "#D92D20"
           },
           "&.disabled": {
-            borderColor: "#E7A63F", 
-            color: "#E7A63F" 
+            borderColor: "#E7A63F",
+            color: "#E7A63F"
           },
           "&.default": {
             backgroundColor: "#EAECF0",
@@ -150,6 +187,7 @@ const nextHrTheme = createTheme({
         }
       }
     },
+<<<<<<< HEAD
     MuiLink: {
       styleOverrides: {
         root: {
@@ -160,6 +198,8 @@ const nextHrTheme = createTheme({
         },
       }
     },
+=======
+>>>>>>> 2e687d4066c608b1ca53f9dd96197a7a731ac0b4
     MuiTypography: {
       styleOverrides: {
         root: {
@@ -198,5 +238,4 @@ const nextHrTheme = createTheme({
     },
   }
 });
-
 export default nextHrTheme;
