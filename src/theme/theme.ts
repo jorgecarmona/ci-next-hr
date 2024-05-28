@@ -1,4 +1,4 @@
-import { createTheme } from "@mui/material";
+import {createTheme} from "@mui/material";
 const nextHrTheme = createTheme({
   palette: {
     primary: {
@@ -194,7 +194,7 @@ const nextHrTheme = createTheme({
           lineHeight: "1.5rem"
         }
       }
-    },
+    }
   }
 });
 export default nextHrTheme;
