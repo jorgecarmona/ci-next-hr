@@ -23,6 +23,18 @@ const nextHrTheme = createTheme({
     fontWeightMedium: 400
   },
   components: {
+    MuiAvatar: {
+      styleOverrides: {
+        root: {
+          "&.profile": {
+            fontSize: "1rem",
+            fontWeight: 500,
+            backgroundColor: "#072136",
+            color: "#FFFFFF"
+          }
+        }
+      }
+    },
     MuiButton: {
       styleOverrides: {
         root: {
@@ -56,6 +68,44 @@ const nextHrTheme = createTheme({
         },
         containedSecondary: {
           color: "#ffffff" 
+        }
+      }
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          borderWidth: "1px",
+          fontFamily: "Poppins, sans-serif",
+          padding: "16px"
+        }
+      }
+    },
+    MuiCardActions: {
+      styleOverrides: {
+        root: {
+          padding: "0"
+        }
+      }
+    },
+    MuiCardContent: {
+      styleOverrides: {
+        root: {
+          padding: "0"
+        }
+      }
+    },
+    MuiCardHeader: {
+      styleOverrides: {
+        root: {
+          padding: "0",
+          marginBottom: "16px"
+        },
+        title: {
+          color: "#000000",
+          fontSize: "14px",
+          fontWeight: "600",
+          lineHeight: "20px",
+          textAlign: "left"
         }
       }
     },
@@ -97,130 +147,6 @@ const nextHrTheme = createTheme({
             backgroundColor: "#EAECF0",
             color: "#000000"
           }
-        }
-      }
-    },
-    MuiCard: {
-      styleOverrides: {
-        root: {
-          borderWidth: "1px",
-          fontFamily: "Poppins, sans-serif",
-          padding: "16px"
-        }
-      }
-    },
-    MuiCardActions: {
-      styleOverrides: {
-        root: {
-          padding: "0"
-        }
-      }
-    },
-    MuiCardContent: {
-      styleOverrides: {
-        root: {
-          padding: "0"
-        }
-      }
-    },
-    MuiCardHeader: {
-      styleOverrides: {
-        root: {
-          padding: "0",
-          marginBottom: "16px"
-        },
-        title: {
-          color: "#000000",
-          fontSize: "14px",
-          fontWeight: "600",
-          lineHeight: "20px",
-          textAlign: "left"
-        }
-      }
-    },
-    MuiTypography: {
-      styleOverrides: {
-        root: {
-          fontWeight: 500
-        },
-        body1: {
-          fontWeight: 400,
-          fontSize: "1rem",
-          lineHeight: "1.5rem"
-        },
-        h1: {
-          fontSize: "2.25rem",
-          lineHeight: "2.75rem"
-        },
-        h2: {
-          fontSize: "2rem",
-          lineHeight: "2.5rem"
-        },
-        h3: {
-          fontSize: "1.5rem",
-          lineHeight: "2.25rem"
-        },
-        h4: {
-          fontSize: "1.25rem",
-          lineHeight: "1.875rem"
-        },
-        h5: {
-          fontSize: "1.125rem",
-          lineHeight: "1.75rem"
-        },
-        h6: {
-          fontSize: "1rem",
-          lineHeight: "1.5rem"
-        }
-      }
-    },
-    MuiAvatar: {
-      styleOverrides: {
-        root: {
-          "&.profile": {
-            fontSize: "1rem",
-            fontWeight: 500,
-            backgroundColor: "#072136",
-            color: "#FFFFFF"
-          }
-        }
-      }
-    },
-    MuiCard: {
-      styleOverrides: {
-        root: {
-          borderWidth: "1px",
-          fontFamily: "Poppins, sans-serif",
-          padding: "16px"
-        }
-      }
-    },
-    MuiCardActions: {
-      styleOverrides: {
-        root: {
-          padding: "0"
-        }
-      }
-    },
-    MuiCardContent: {
-      styleOverrides: {
-        root: {
-          padding: "0"
-        }
-      }
-    },
-    MuiCardHeader: {
-      styleOverrides: {
-        root: {
-          padding: "0",
-          marginBottom: "16px"
-        },
-        title: {
-          color: "#000000",
-          fontSize: "14px",
-          fontWeight: "600",
-          lineHeight: "20px",
-          textAlign: "left"
         }
       }
     },
@@ -269,7 +195,7 @@ const nextHrTheme = createTheme({
           lineHeight: "1.5rem"
         }
       }
-    }
+    },
   }
 });
 
