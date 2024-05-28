@@ -2,11 +2,11 @@ import {Link as MuiLink} from "@mui/material"
 
 interface LinkProps {
     children: string;
-    linkType?: 'primary' | 'secondary';
-    underline?: 'none' | 'hover' | 'always';
+    linkType: 'primary' | 'secondary';
+    underline: 'none' | 'hover' | 'always';
 }
 
-function Link({ children, linkType = 'primary', underline = 'none' }: LinkProps) {
+function Link({ children, linkType, underline }: LinkProps) {
     let Text = "Don't have an account?";
 
     return (
