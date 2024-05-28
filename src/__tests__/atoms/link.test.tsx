@@ -13,6 +13,16 @@ describe("Link Component Unit Test", () => {
     expect(linkElement).toBeInTheDocument();
 });
 
+    it("should render the Link with primary style and no underline", () => {
+        render(
+            <Link linkType="primary" underline="none">
+                Terms & Conditions
+            </Link>
+    );
+    const linkElement = screen.getByText('Terms & Conditions');
+    expect(linkElement).toBeInTheDocument();
+});
+
     it("should render the secondary Link with additional text", () => {
         render(
             <Link linkType="secondary" underline="hover">
