@@ -1,22 +1,22 @@
-import Link from '@mui/material/Link';
+import {Link as MuiLink} from "@mui/material"
 
-interface UnderlineLinkProps {
+interface LinkProps {
     children: string;
-    linkType?: 'primary' | 'secondary' | 'default';
+    linkType?: 'primary' | 'secondary';
     underline?: 'none' | 'hover' | 'always';
 }
 
-function UnderlineLink({ children, linkType = 'default', underline = 'none' }: UnderlineLinkProps) {
+function Link({ children, linkType = 'primary', underline = 'none' }: LinkProps) {
     let Text = "Don't have an account?";
 
     return (
     <div>
-        {linkType === 'secondary' ? <span>{Text}</span> : null}
-        <Link underline={underline}>
+        {linkType === 'secondary' ? <span style={{fontSize: '14px'}}>{Text}</span> : null}
+        <MuiLink underline={underline}>
             {children}
-        </Link>
+        </MuiLink>
     </div>
     );
 };
 
-export default UnderlineLink;
+export default Link;

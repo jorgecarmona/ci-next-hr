@@ -100,6 +100,16 @@ const nextHrTheme = createTheme({
         }
       }
     },
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          fontFamily: "Poppins",
+          fontWeightMedium: 400,
+          fontSize: "14px",
+          lineHeight: "21px"
+        },
+      }
+    },
     MuiTypography: {
       styleOverrides: {
         root: {
