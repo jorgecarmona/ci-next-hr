@@ -2,7 +2,7 @@ import Autocomplete from "./autocomplete";
 import Avatar from "./avatar";
 import Button from "./button";
 import Card from "./card";
+import PasswordTextField from "./password-textfield";
 import Typography from "./typography";
-import PasswordTextField from "./textfield-password";
 
-export {Avatar, Autocomplete, Button, Card, Typography, PasswordTextField};
+export {Avatar, Autocomplete, Button, Card, PasswordTextField, Typography};
