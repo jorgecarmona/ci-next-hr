@@ -1,15 +1,17 @@
-import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
-import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
-import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
-import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
-import KeyboardDoubleArrowRightOutlinedIcon from "@mui/icons-material/KeyboardDoubleArrowRightOutlined";
-import LiveHelpOutlinedIcon from "@mui/icons-material/LiveHelpOutlined";
-import LocalLibraryOutlinedIcon from "@mui/icons-material/LocalLibraryOutlined";
-import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
-import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
-import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
-import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
-import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
+import {
+  AddOutlined,
+  ArticleOutlined,
+  DeleteOutlined, 
+  HelpOutlineOutlined ,
+  KeyboardDoubleArrowRightOutlined, 
+  LiveHelpOutlined,
+  LocalLibraryOutlined,
+  EmailOutlined,
+  NotificationsNoneOutlined, 
+  VisibilityOutlined, 
+  VisibilityOffOutlined,
+  WorkOutlineOutlined
+} from "@mui/icons-material";
 
 export enum IconType {
   Add = "add",
@@ -27,18 +29,18 @@ export enum IconType {
   Work = "work"
 }
 
-export const iconLookup: Record<IconType, typeof AddOutlinedIcon> = {
-  add: AddOutlinedIcon,
-  article: ArticleOutlinedIcon,
-  business: WorkOutlineOutlinedIcon,
-  delete: DeleteOutlinedIcon,
-  email: EmailOutlinedIcon,
-  forward: KeyboardDoubleArrowRightOutlinedIcon,
-  help: HelpOutlineOutlinedIcon,
-  library: LocalLibraryOutlinedIcon,
-  live: LiveHelpOutlinedIcon,
-  notifications: NotificationsNoneOutlinedIcon,
-  visibility: VisibilityOutlinedIcon,
-  visibilityoff: VisibilityOffOutlinedIcon,
-  work: WorkOutlineOutlinedIcon
+export const iconLookup: Record<IconType, typeof AddOutlined> = {
+  add: AddOutlined,
+  article: ArticleOutlined,
+  business: WorkOutlineOutlined,
+  delete: DeleteOutlined,
+  email: EmailOutlined,
+  forward: KeyboardDoubleArrowRightOutlined,
+  help: HelpOutlineOutlined,
+  library: LocalLibraryOutlined,
+  live: LiveHelpOutlined,
+  notifications: NotificationsNoneOutlined,
+  visibility: VisibilityOutlined,
+  visibilityoff: VisibilityOffOutlined,
+  work: WorkOutlineOutlined
 };
