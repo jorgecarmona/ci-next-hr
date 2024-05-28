@@ -1,23 +1,23 @@
 import {render, screen} from "@testing-library/react";
 
-import UnderlineLink from "../../atoms/link";
+import Link from "../../atoms/link";
 
-describe("UnderlineLink Component Unit Test", () => {
-    it("should render the UnderlineLink with correct children", () => {
+describe("Link Component Unit Test", () => {
+    it("should render the Link with correct children", () => {
         render(
-            <UnderlineLink linkType="primary" underline="always">
+            <Link linkType="primary" underline="always">
                 Forgot Password?
-            </UnderlineLink>
+            </Link>
     );
     const linkElement = screen.getByText('Forgot Password?');
     expect(linkElement).toBeInTheDocument();
 });
 
-    it("should render the secondary UnderlineLink with additional text", () => {
+    it("should render the secondary Link with additional text", () => {
         render(
-            <UnderlineLink linkType="secondary" underline="hover">
+            <Link linkType="secondary" underline="hover">
                 Sign up
-            </UnderlineLink>
+            </Link>
     );
     const spanElement = screen.getByText("Don't have an account?");
     const linkElement = screen.getByText('Sign up');
