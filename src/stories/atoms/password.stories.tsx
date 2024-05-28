@@ -1,17 +1,21 @@
 import { Meta, StoryObj } from "@storybook/react";
 
-import PasswordTextField from "../../atoms/textfield-password";
+import { PasswordTextField } from "../../atoms";
 
-export default {
+const meta = {
     title: 'Atoms/PasswordTextField',
     component: PasswordTextField,
     parameters: {
         layout: 'centered',
     },
     tags: ['autodocs'],
-} as Meta <typeof PasswordTextField>;
+} satisfies Meta <typeof PasswordTextField>;
 
-export const Default : StoryObj<typeof PasswordTextField> = {
+export default meta;
+
+type Story =  StoryObj<typeof meta>;
+
+export const Default : Story = {
     args : {
         label: "Password",
         value: "1234567",
@@ -22,7 +26,7 @@ export const Default : StoryObj<typeof PasswordTextField> = {
 }
 }
 
-export const WithError: StoryObj<typeof PasswordTextField> = {
+export const WithError: Story = {
     args: {
         label: "Password",
         value: "1234567",
@@ -35,7 +39,7 @@ export const WithError: StoryObj<typeof PasswordTextField> = {
 }
 }
 
-export const WithIcon: StoryObj<typeof PasswordTextField> = {
+export const WithIcon: Story = {
     args: {
         label: "Password",
         value: "1234567",
