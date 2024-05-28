@@ -1,24 +1,51 @@
 import { Meta, StoryObj } from "@storybook/react";
 
-import PasswordTextField from "../../atoms/textfield-password";
+import { PasswordTextField } from "../../atoms";
 
-export default {
+const meta = {
     title: 'Atoms/PasswordTextField',
     component: PasswordTextField,
-    tags: ['autodocs'],
     parameters: {
         layout: 'centered',
-    }
-} as Meta <typeof PasswordTextField>;
+    },
+    tags: ['autodocs'],
+} satisfies Meta <typeof PasswordTextField>;
 
-export const Primary : StoryObj<typeof PasswordTextField> = {
+export default meta;
+
+type Story =  StoryObj<typeof meta>;
+
+export const Default : Story = {
     args : {
-        label: "",
-        helperText: "",
-        password: "",
-        handlePassword: (event) => {
-        console.log("Password entered:", event.target.value);
+        label: "Password",
+        value: "1234567",
+        helperText: "Ingresa tu contraseña",
+        onChangeCallback: (value) => {
+        console.log("Password entered:", value);
     }
 }
 }
 
+export const WithError: Story = {
+    args: {
+        label: "Password",
+        value: "1234567",
+        error: true,
+        required: true,
+        errorHelperText:'Usuario o contraseña incorrectas',
+        onChangeCallback: (value) => {
+            console.log("Password entered:", value)
+    }
+}
+}
+
+export const WithIcon: Story = {
+    args: {
+        label: "Password",
+        value: "1234567",
+        icon: true,
+        onChangeCallback: (value) => {
+            console.log("Password entered:", value)
+    }
+}
+}

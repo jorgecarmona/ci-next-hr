@@ -12,7 +12,7 @@ export enum ButtonType {
   Tertiary = "tertiary"
 }
 
-interface ButtonProps extends Omit<MuiButtonProps, "color" | "variant"> {
+export interface ButtonProps extends Omit<MuiButtonProps, "color" | "variant"> {
   buttonType?: ButtonType;
   children: React.ReactNode;
   disabled?: boolean;

@@ -50,6 +50,18 @@ const nextHrTheme = createTheme({
         }
       }
     },
+    MuiAvatar: {
+      styleOverrides: {
+        root: {
+          "&.profile": {
+            fontSize: "1rem",
+            fontWeight: 500,
+            backgroundColor: "#072136",
+            color: "#FFFFFF"
+          }
+        }
+      }
+    },
     MuiCard: {
       styleOverrides: {
         root: {
