@@ -1,7 +1,9 @@
+import Autocomplete from "./autocomplete";
+import Avatar from "./avatar";
 import Button from "./button";
 import Card from "./card";
-import TextFieldPassword from "./textfield-password";
+import PasswordTextField from "./password-textfield";
 import ToolbarButton from "./toolbar-button";
 import Typography from "./typography";
 
-export {Button, Card, TextFieldPassword, Typography, ToolbarButton};
+export {Avatar, Autocomplete, Button, Card, PasswordTextField, ToolbarButton, Typography};
