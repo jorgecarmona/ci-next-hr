@@ -2,31 +2,74 @@ import React from "react";
 
 import {Button as MuiButton, ButtonProps as MuiButtonProps} from "@mui/material";
 
-import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
-import KeyboardDoubleArrowRightOutlinedIcon from "@mui/icons-material/KeyboardDoubleArrowRightOutlined";
-import LocalLibraryOutlinedIcon from "@mui/icons-material/LocalLibraryOutlined";
-import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
+import {IconType, iconLookup} from "./icon-store";
+
+export enum ButtonType {
+  Primary = "primary",
+  Secondary = "secondary",
+  Outlined = "outlined",
+  Text = "text",
+  Tertiary = "tertiary"
+}
 
 interface ButtonProps extends Omit<MuiButtonProps, "color" | "variant"> {
-  buttonType?: "primary" | "secondary" | "outlined" | "tertiary";
+  buttonType?: ButtonType;
   children: React.ReactNode;
   disabled?: boolean;
   fullWidth?: boolean;
-  icon?: "add" | "forward" | "business" | "library";
+  icon?: IconType;
+  onClick?: () => void;
+  selected?: boolean;
 }
 
-const iconLookup = {
-  add: AddOutlinedIcon,
-  forward: KeyboardDoubleArrowRightOutlinedIcon,
-  business: WorkOutlineOutlinedIcon,
-  library: LocalLibraryOutlinedIcon
-};
-
-function Button({buttonType, children, disabled = false, fullWidth = false, icon}: ButtonProps) {
+function Button({
+  buttonType = ButtonType.Text,
+  children,
+  disabled = false,
+  fullWidth = false,
+  icon,
+  onClick,
+  selected = false
+}: ButtonProps) {
   let Icon = icon ? iconLookup[icon] : null;
+  let buttonVariant: "text" | "outlined" | "contained";
+  let buttonColor: "primary" | "secondary" | "tertiary" | undefined = undefined;
+
+  switch (buttonType) {
+    case ButtonType.Primary:
+    case ButtonType.Secondary:
+      buttonVariant = "contained";
+      buttonColor = buttonType;
+      break;
+
+    case ButtonType.Outlined:
+      buttonVariant = buttonType;
+      break;
+
+    default:
+      buttonVariant = "text";
+  }
+
+  let className = "";
+
+  if (buttonType === ButtonType.Tertiary) {
+    className += "tertiary";
+  }
+
+  if (selected) {
+    className += className.length > 0 ? " selected" : "selected";
+  }
 
   return (
-    <MuiButton variant="contained" disabled={disabled} fullWidth={fullWidth} startIcon={Icon ? <Icon /> : null}>
+    <MuiButton
+      className={className}
+      variant={buttonVariant}
+      color={buttonColor}
+      disabled={disabled}
+      fullWidth={fullWidth}
+      onClick={onClick}
+      startIcon={Icon ? <Icon /> : null}
+    >
       {children}
     </MuiButton>
   );
