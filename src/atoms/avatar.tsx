@@ -22,8 +22,8 @@ interface DefaultAvatarProps extends MuiAvatarProps {
 
 type AvatarProps = ProfileAvatarProps | DefaultAvatarProps;
 
-function Avatar({children, type}: ProfileAvatarProps): JSX.Element;
-function Avatar({alt, height, src, type, width}: DefaultAvatarProps): JSX.Element;
+function Avatar(props: ProfileAvatarProps): JSX.Element;
+function Avatar(props: DefaultAvatarProps): JSX.Element;
 
 function Avatar({alt, children, height = 400, src, type, width = 400}: AvatarProps) {
   const sxProps = type === "profile" ? {} : {width, height};
