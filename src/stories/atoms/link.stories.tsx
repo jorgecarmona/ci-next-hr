@@ -1,17 +1,17 @@
 import { Meta, StoryObj } from "@storybook/react";
 
-import UnderlineLink from "../../atoms/link";
+import Link from "../../atoms/link";
 
 export default {
-    title: 'Atoms/UnderlineLink',
-    component: UnderlineLink,
+    title: 'Atoms/Link',
+    component: Link,
     parameters: {
         layout: 'centered',
     },
     tags: ['autodocs'],
-} as Meta <typeof UnderlineLink>;
+} as Meta <typeof Link>;
 
-export const Primary : StoryObj<typeof UnderlineLink> = {
+export const Primary : StoryObj<typeof Link> = {
     args : {
         children: 'Forgot Password?',
         linkType: 'primary',
@@ -19,7 +19,7 @@ export const Primary : StoryObj<typeof UnderlineLink> = {
     }
 }
 
-export const Secondary : StoryObj<typeof UnderlineLink> = {
+export const Secondary : StoryObj<typeof Link> = {
     args : {
         children: 'Sign up',
         linkType: 'secondary',
@@ -27,10 +27,10 @@ export const Secondary : StoryObj<typeof UnderlineLink> = {
     }
 }
 
-export const Default : StoryObj<typeof UnderlineLink> = {
+export const Default : StoryObj<typeof Link> = {
     args : {
         children: 'Terms & Conditions',
-        linkType: 'default',
+        linkType: 'primary',
         underline: 'none'
     }
 }
