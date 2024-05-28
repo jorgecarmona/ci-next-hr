@@ -1,97 +1,69 @@
-import { Meta, StoryObj } from "@storybook/react";
+import React from "react";
+import {Meta, StoryObj} from "@storybook/react";
 
-import { Grid } from "../../atoms";
-import { Box, Typography } from '@mui/material';
+import {styled} from "@mui/material/styles";
+import {Box, Paper} from "@mui/material";
 
-type Story = StoryObj<typeof Grid>;
+import {Grid} from "../../atoms";
 
-export default {
-    title: 'Atoms/Grid',
-    component: Grid,
-    tags: ['autodocs'],
-    parameters: {
-        layout: 'centered',
-    }
-} as Meta<typeof Grid>;
+const Item = styled(Paper)(({theme}) => ({
+  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: theme.palette.text.secondary
+}));
 
-export const Default: Story = {
+const meta = {
+  title: "Components/Grid",
+  component: Grid,
+  parameters: {
+    layout: "centered"
+  },
+  tags: ["autodocs"],
   args: {
-      container: true,
-      children: (
-          <>
-            <Grid container xs={12}>
-              <Grid item xs={8} >
-                <Box p={2} bgcolor="blue.300">
-                      <Typography variant="body1">xs=8</Typography>
-                </Box>
-              </Grid>
-              <Grid item xs={4}>
-                <Box p={2} bgcolor="grey.300" top='95px'>
-                      <Typography variant="body1">xs=4</Typography>
-                </Box>
-              </Grid>
-            </Grid>
-            <Grid item xs={4}>
-                <Box p={2} bgcolor="grey.300">
-                    <Typography variant="body1">xs=4</Typography>
-                </Box>
-            </Grid>
-            <Grid item xs={8}>
-                <Box p={2} bgcolor="#1570EF">
-                    <Typography variant="body1">xs=8</Typography>
-                </Box>
-            </Grid>
-          </>
-      ),
+    spacing: 2
+  }
+} satisfies Meta<typeof Grid>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const DefaultGrid: Story = {
+  args: {
+    children: (
+      <Grid container xs={12}>
+        <Grid xs={6}>
+          <Paper>Hello</Paper>
+        </Grid>
+        <Grid xs={6}>
+          <Paper>Hello 2</Paper>
+        </Grid>
+      </Grid>
+    )
   }
 };
 
-export const Autolayout: Story = {
-    args: {
-        container: true,
-        children: (
-            <>
-              <Grid item xs>
-                  <Box p={2} bgcolor="grey.300">
-                      <Typography variant="body1">xs</Typography>
-                  </Box>
-              </Grid>
-              <Grid item xs={6}>
-                  <Box p={2} bgcolor="grey.300">
-                      <Typography variant="body1">xs=6</Typography>
-                  </Box>
-              </Grid>
-              <Grid item xs>
-                  <Box p={2} bgcolor="grey.300">
-                      <Typography variant="body1">xs</Typography>
-                  </Box>
-              </Grid>
-            </>
-        ),
-    }
-};
-
-export const Variablewidth: Story = {
+export const BasicGrid: Story = {
   args: {
-      container: true,
-      children: (
-        <>
-          <Grid item xs="auto">
-              <Box p={2} bgcolor="grey.300">
-                  <Typography variant="body1">Variable width</Typography>
-              </Box>
+    children: (
+      <Box sx={{flexGrow: 1}}>
+        <Grid container spacing={4}>
+          <Grid xs={8}>
+            <Item>xs=8</Item>
           </Grid>
-          <Grid item xs={6}>
-              <Box p={2} bgcolor="grey.300">
-                  <Typography variant="body1">xs=6</Typography>
-              </Box>
+          <Grid xs={4}>
+            <Item>xs=4</Item>
           </Grid>
-          <Grid item xs>
-              <Box p={2} bgcolor="grey.300">
-                  <Typography variant="body1">xs</Typography>
-              </Box>
+          <Grid xs={4}>
+            <Item>xs=4</Item>
           </Grid>
-        </>
-      ),
+          <Grid xs={8}>
+            <Item>xs=8</Item>
+          </Grid>
+        </Grid>
+      </Box>
+    )
   }
 };
