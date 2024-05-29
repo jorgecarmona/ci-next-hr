@@ -1,5 +1,6 @@
 import Autocomplete from "./autocomplete";
 import Avatar from "./avatar";
+import BreadCrumbs from "./breadcrumbs";
 import Button from "./button";
 import Card from "./card";
 import Chip from "./chip";
@@ -9,4 +10,4 @@ import TextField from "./textField";
 import ToolbarButton from "./toolbar-button";
 import Typography from "./typography";
 
-export {Autocomplete, Avatar, Button, Card, Chip, Grid, PasswordTextField, TextField, ToolbarButton, Typography};
+export {Autocomplete, Avatar, BreadCrumbs, Button, Card, Chip, Grid, PasswordTextField, TextField, ToolbarButton, Typography};
