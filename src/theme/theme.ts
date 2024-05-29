@@ -15,6 +15,13 @@ const nextHrTheme = createTheme({
     },
     warning: {
       main: "#FFA000"
+    },
+    text: {
+      primary: "#1570EF",
+      secondary: "#344054"
+    },
+    custom: {
+      paper: "#FCFCFD"
     }
   },
   typography: {
@@ -156,7 +163,7 @@ const nextHrTheme = createTheme({
           fontWeightMedium: 400,
           fontSize: "16px",
           lineHeight: "21px"
-        },
+        }
       }
     },
     MuiTypography: {
