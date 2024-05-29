@@ -2,30 +2,39 @@ import { Meta, StoryObj } from "@storybook/react";
 
 import Link from "../../atoms/link";
 
-export default {
+const meta = {
     title: 'Atoms/Link',
     component: Link,
     parameters: {
         layout: 'centered',
     },
     tags: ['autodocs'],
-} as Meta <typeof Link>;
+} satisfies Meta <typeof Link>;
 
-export const Primary : StoryObj<typeof Link> = {
-    args : {
+export default meta;
+
+type Story =  StoryObj<typeof meta>;
+
+export const Primary : Story = {
+    args: {
         children: 'Forgot Password?',
         underline: 'always'
     }
 }
 
-export const Secondary : StoryObj<typeof Link> = {
+export const Secondary : Story = {
+    render: (args) => (
+        <>
+            Texto adicional &nbsp; <Link {...args}>Sign up</Link>
+        </>
+        ),
     args : {
         children: 'Sign up',
         underline: 'hover',
     }
 }
 
-export const Default : StoryObj<typeof Link> = {
+export const Default : Story = {
     args : {
         children: 'Terms & Conditions',
         underline: 'none'

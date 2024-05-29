@@ -1,7 +1,7 @@
 import {Link as MuiLink} from "@mui/material"
 
 interface LinkProps {
-    children: string;
+    children: React.ReactNode;
     underline?: 'none' | 'hover' | 'always';
 }
 
