@@ -154,7 +154,7 @@ const nextHrTheme = createTheme({
         root: {
           fontFamily: "Poppins",
           fontWeightMedium: 400,
-          fontSize: "14px",
+          fontSize: "16px",
           lineHeight: "21px"
         },
       }

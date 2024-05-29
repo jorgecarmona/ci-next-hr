@@ -5,9 +5,10 @@ import Card from "./card";
 import Chip from "./chip";
 import Grid from "./grid";
 import Icon from "./icon";
+import Link from "./link";
 import PasswordTextField from "./password-textfield";
 import TextField from "./textField";
 import ToolbarButton from "./toolbar-button";
 import Typography from "./typography";
 
-export {Autocomplete, Avatar, Button, Card, Chip, Grid, Icon, PasswordTextField, TextField, ToolbarButton, Typography};
+export {Autocomplete, Avatar, Button, Card, Chip, Grid, Icon, Link, PasswordTextField, TextField, ToolbarButton, Typography};
