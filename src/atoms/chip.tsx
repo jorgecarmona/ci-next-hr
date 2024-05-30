@@ -6,11 +6,11 @@ export type ChipType = 'pending' | 'open' | 'approved' | 'outlined' | 'denied' |
 interface ChipProps extends Omit<MuiChipProps, 'color' | 'onDelete' | 'onClick'> {
   label: string;
   onClick?: () => void;
-  onDelete?: () => void;
+  // onDelete?: () => void;
   type?: ChipType;
 }
 
-function Chip({ label, onClick, onDelete, type = 'default', ...rest }: ChipProps) {
+function Chip({ label, onClick,  type = 'default', ...rest }: ChipProps) {
   let color: "primary" | "secondary" | undefined = undefined;
   let variant: "filled" | "outlined" = "filled";
 
@@ -37,7 +37,7 @@ function Chip({ label, onClick, onDelete, type = 'default', ...rest }: ChipProps
       color={color}
       label={label}
       onClick={onClick}
-      onDelete={onDelete}
+      // onDelete={onDelete}
       variant={variant}
       {...rest}
     />

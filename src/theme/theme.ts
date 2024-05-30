@@ -1,5 +1,4 @@
-import { createTheme } from "@mui/material";
-
+import {createTheme} from "@mui/material";
 const nextHrTheme = createTheme({
   palette: {
     primary: {
@@ -9,13 +8,20 @@ const nextHrTheme = createTheme({
       main: "#344054"
     },
     success: {
-      main: "#027A48" 
+      main: "#027A48"
     },
     error: {
-      main: "#b42318" 
+      main: "#B42318"
     },
     warning: {
-      main: "#FFA000" 
+      main: "#FFA000"
+    },
+    text: {
+      primary: "#1570EF",
+      secondary: "#344054"
+    },
+    custom: {
+      paper: "#FCFCFD"
     }
   },
   typography: {
@@ -23,6 +29,18 @@ const nextHrTheme = createTheme({
     fontWeightMedium: 400
   },
   components: {
+    MuiAvatar: {
+      styleOverrides: {
+        root: {
+          "&.profile": {
+            fontSize: "1rem",
+            fontWeight: 500,
+            backgroundColor: "#072136",
+            color: "#FFFFFF"
+          }
+        }
+      }
+    },
     MuiButton: {
       styleOverrides: {
         root: {
@@ -49,13 +67,51 @@ const nextHrTheme = createTheme({
           }
         },
         text: {
-          color: "#475467" 
+          color: "#475467"
         },
         containedPrimary: {
-          color: "#ffffff" 
+          color: "#FFFFFF"
         },
         containedSecondary: {
-          color: "#ffffff" 
+          color: "#FFFFFF"
+        }
+      }
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          borderWidth: "1px",
+          fontFamily: "Poppins, sans-serif",
+          padding: "16px"
+        }
+      }
+    },
+    MuiCardActions: {
+      styleOverrides: {
+        root: {
+          padding: "0"
+        }
+      }
+    },
+    MuiCardContent: {
+      styleOverrides: {
+        root: {
+          padding: "0"
+        }
+      }
+    },
+    MuiCardHeader: {
+      styleOverrides: {
+        root: {
+          padding: "0",
+          marginBottom: "16px"
+        },
+        title: {
+          color: "#000000",
+          fontSize: "14px",
+          fontWeight: "600",
+          lineHeight: "20px",
+          textAlign: "left"
         }
       }
     },
@@ -79,19 +135,19 @@ const nextHrTheme = createTheme({
           },
           "&.denied": {
             backgroundColor: "#FEF3F2",
-            color: "#b42318"
+            color: "#B42318"
           },
           "&.enabled": {
-            borderColor: "#027A48", 
-            color: "#027a48" 
+            borderColor: "#027A48",
+            color: "#027A48"
           },
           "&.rejected": {
-            borderColor: "#D92D20", 
-            color: "#D92D20" 
+            borderColor: "#D92D20",
+            color: "#D92D20"
           },
           "&.disabled": {
-            borderColor: "#E7A63F", 
-            color: "#E7A63F" 
+            borderColor: "#E7A63F",
+            color: "#E7A63F"
           },
           "&.default": {
             backgroundColor: "#EAECF0",
@@ -100,127 +156,13 @@ const nextHrTheme = createTheme({
         }
       }
     },
-    MuiCard: {
+    MuiLink: {
       styleOverrides: {
         root: {
-          borderWidth: "1px",
-          fontFamily: "Poppins, sans-serif",
-          padding: "16px"
-        }
-      }
-    },
-    MuiCardActions: {
-      styleOverrides: {
-        root: {
-          padding: "0"
-        }
-      }
-    },
-    MuiCardContent: {
-      styleOverrides: {
-        root: {
-          padding: "0"
-        }
-      }
-    },
-    MuiCardHeader: {
-      styleOverrides: {
-        root: {
-          padding: "0",
-          marginBottom: "16px"
-        },
-        title: {
-          color: "#000000",
-          fontSize: "14px",
-          fontWeight: "600",
-          lineHeight: "20px",
-          textAlign: "left"
-        }
-      }
-    },
-    MuiTypography: {
-      styleOverrides: {
-        root: {
-          fontWeight: 500
-        },
-        body1: {
-          fontWeight: 400,
-          fontSize: "1rem",
-          lineHeight: "1.5rem"
-        },
-        h1: {
-          fontSize: "2.25rem",
-          lineHeight: "2.75rem"
-        },
-        h2: {
-          fontSize: "2rem",
-          lineHeight: "2.5rem"
-        },
-        h3: {
-          fontSize: "1.5rem",
-          lineHeight: "2.25rem"
-        },
-        h4: {
-          fontSize: "1.25rem",
-          lineHeight: "1.875rem"
-        },
-        h5: {
-          fontSize: "1.125rem",
-          lineHeight: "1.75rem"
-        },
-        h6: {
-          fontSize: "1rem",
-          lineHeight: "1.5rem"
-        }
-      }
-    },
-    MuiAvatar: {
-      styleOverrides: {
-        root: {
-          "&.profile": {
-            fontSize: "1rem",
-            fontWeight: 500,
-            backgroundColor: "#072136",
-            color: "#FFFFFF"
-          }
-        }
-      }
-    },
-    MuiCard: {
-      styleOverrides: {
-        root: {
-          borderWidth: "1px",
-          fontFamily: "Poppins, sans-serif",
-          padding: "16px"
-        }
-      }
-    },
-    MuiCardActions: {
-      styleOverrides: {
-        root: {
-          padding: "0"
-        }
-      }
-    },
-    MuiCardContent: {
-      styleOverrides: {
-        root: {
-          padding: "0"
-        }
-      }
-    },
-    MuiCardHeader: {
-      styleOverrides: {
-        root: {
-          padding: "0",
-          marginBottom: "16px"
-        },
-        title: {
-          color: "#000000",
-          fontSize: "14px",
-          fontWeight: "600",
-          lineHeight: "20px",
-          textAlign: "left"
+          fontFamily: "Poppins",
+          fontWeightMedium: 400,
+          fontSize: "16px",
+          lineHeight: "21px"
         }
       }
     },
@@ -262,5 +204,4 @@ const nextHrTheme = createTheme({
     }
   }
 });
-
 export default nextHrTheme;
