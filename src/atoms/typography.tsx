@@ -1,7 +1,7 @@
 import {Typography as MuiTypography, TypographyProps as MuiTypographyProps} from "@mui/material";
 
 interface TypographyProps extends Omit<MuiTypographyProps, "children" | "variant"> {
-  children: string;
+  children: React.ReactNode;
   variant?: "body1" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 }
 
