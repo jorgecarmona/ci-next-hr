@@ -15,7 +15,11 @@ const nextHrTheme = createTheme({
     },
     warning: {
       main: "#FFA000"
-    }
+    },
+    info: {
+      main: "#FFFFFF",
+    },
+
   },
   typography: {
     fontFamily: "Poppins, sans-serif",
