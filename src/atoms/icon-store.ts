@@ -8,6 +8,9 @@ import {
   LocalLibraryOutlined,
   EmailOutlined,
   NotificationsNoneOutlined, 
+  Person2Outlined,
+  SettingsOutlined,
+  TrendingUpOutlined,
   VisibilityOutlined, 
   VisibilityOffOutlined,
   WorkOutlineOutlined
@@ -24,6 +27,9 @@ export enum IconType {
   Library = "library",
   Live = "live",
   Notifications = "notifications",
+  Person2 = "person2",
+  Settings = "settings",
+  TrendingUp = "trendingup",
   Visibility = "visibility",
   VisibilityOff = "visibilityoff",
   Work = "work"
@@ -40,6 +46,9 @@ export const iconLookup: Record<IconType, typeof AddOutlined> = {
   library: LocalLibraryOutlined,
   live: LiveHelpOutlined,
   notifications: NotificationsNoneOutlined,
+  person2: Person2Outlined,
+  settings: SettingsOutlined,
+  trendingup: TrendingUpOutlined,
   visibility: VisibilityOutlined,
   visibilityoff: VisibilityOffOutlined,
   work: WorkOutlineOutlined
