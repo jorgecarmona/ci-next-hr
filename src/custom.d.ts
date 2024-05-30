@@ -7,6 +7,8 @@ declare module "@mui/material/styles" {
       dark: string;
       contrastText: string;
       paper: string;
+      title: string;
+      subtitle: string;
     };
   }
   interface PaletteOptions {
@@ -16,6 +18,8 @@ declare module "@mui/material/styles" {
       dark?: string;
       contrastText?: string;
       paper?: string;
+      title?: string;
+      subtitle?: string;
     };
   }
 }
