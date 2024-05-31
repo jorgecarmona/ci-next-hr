@@ -27,7 +27,7 @@ export enum IconType {
   Library = "library",
   Live = "live",
   Notifications = "notifications",
-  Person2 = "person2",
+  Person2 = "person",
   Settings = "settings",
   TrendingUp = "trendingup",
   Visibility = "visibility",

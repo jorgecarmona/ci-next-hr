@@ -3,7 +3,7 @@ import NavItem from "../../molecules/navItem";
 import { IconType } from "../../atoms/icon-store";
 
 const meta = {
-    title: 'Atoms/NavItem',
+    title: 'Molecules/NavItem',
     component: NavItem,
     tags: ['autodocs'],
     parameters: {
