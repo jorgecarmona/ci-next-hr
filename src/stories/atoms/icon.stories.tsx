@@ -1,6 +1,6 @@
 import {Meta, StoryObj} from "@storybook/react";
-
 import {Icon} from "../../atoms";
+import {IconType} from "../../atoms/icon-store";
 
 export default {
   title: "Atoms/Icon",
@@ -8,56 +8,63 @@ export default {
   tags: ["autodocs"],
   parameters: {
     layout: "centered"
+  },
+  argTypes: {
+    name: {
+      control: "select",
+      options: [...Object.values(IconType)]
+    },
+    shape: {
+      control: {
+        type: "select",
+        options: ["circle", "square", "none"]
+      }
+    }
+  },
+  args: {
+    hasNotifications: false
   }
 } as Meta<typeof Icon>;
 
 export const Help: StoryObj<typeof Icon> = {
   args: {
-    name: "help",
-    className: "help",
-    style: {fontSize: 40}
+    name: IconType.Help
   }
 };
 
 export const Notifications: StoryObj<typeof Icon> = {
   args: {
-    name: "notifications",
-    style: {fontSize: 40},
+    name: IconType.Notifications,
     hasNotifications: true
   }
 };
 
 export const Delete: StoryObj<typeof Icon> = {
   args: {
-    name: "delete",
-    style: {fontSize: 40}
+    name: IconType.Delete
   }
 };
 
 export const Work: StoryObj<typeof Icon> = {
   args: {
-    name: "work",
-    style: {fontSize: 40}
+    name: IconType.Work
   }
 };
 
 export const Article: StoryObj<typeof Icon> = {
   args: {
-    name: "article",
-    style: {fontSize: 40}
+    name: IconType.Article
   }
 };
 
 export const Live: StoryObj<typeof Icon> = {
   args: {
-    name: "live",
-    style: {fontSize: 40}
+    name: IconType.Live
   }
 };
 
 export const Library: StoryObj<typeof Icon> = {
   args: {
-    name: "library",
-    style: {fontSize: 40}
+    name: IconType.Library
   }
 };
