@@ -1,11 +1,12 @@
 import { Button, Card as MuiCard, Icon, Typography as MuiTypography } from '../atoms'
+import { IconType } from '../atoms/icon-store';
 
 import nextHrTheme from '../theme/theme';
 
 interface BigNavButtonProps {
   bgColor?: string;
   customColor?: string; 
-  icon: 'work' | 'live' | 'library' | 'article';
+  icon: IconType;
   onClickCallback: (value: string) => void;
   subtitle?: string;
   title?: string;
@@ -14,8 +15,7 @@ interface BigNavButtonProps {
 export default function BigNavButton({bgColor, customColor, icon, onClickCallback, subtitle, title = ''}: BigNavButtonProps) {    
   const buttonId = title.toLowerCase().replace(' ', '-');
   const layout = {width: '130px', height: '104px'};
-  const iconStyles = {style: {borderRadius: "50%", display: "inline-flex", alignItems: "center", justifyContent: "center", width: "48px", height: "48px",  backgroundColor: bgColor, 
-  color: customColor}};
+  const iconStyles = {style: {borderRadius: "50%", display: "inline-flex", alignItems: "center", justifyContent: "center", width: "48px", height: "48px"}};
   const palette = nextHrTheme.palette.custom;
 
   return (
@@ -23,7 +23,7 @@ export default function BigNavButton({bgColor, customColor, icon, onClickCallbac
       <MuiCard bgColor={palette.paper}
         content={
           <div style={layout}>
-            <Icon name={icon} {...iconStyles}/>
+            <Icon name={icon} {...iconStyles} bgColor={bgColor} customColor={customColor}/>
             <MuiTypography variant='h5'>
               <span style={{color: palette.title, fontWeight: 600}}>
                 {title}
@@ -35,7 +35,7 @@ export default function BigNavButton({bgColor, customColor, icon, onClickCallbac
               </span>
             </MuiTypography>
           </div>
-            }
+        }
       />
     </Button>
   )

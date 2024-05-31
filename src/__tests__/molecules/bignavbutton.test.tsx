@@ -3,13 +3,15 @@ import userEvent from '@testing-library/user-event';
 
 import BigNavButton from '../../molecules/bignavbutton';
 
+import { IconType } from '../../atoms/icon-store';
+
 describe('BigNavButton', () => {
     it('renders without crashing', () => {
         render(<BigNavButton 
-            bgColor='#F0F9FF'
-            customColor='#2E90FA'
-            icon='work'
-            onClickCallback= {() => {}}
+            bgColor = '#F0F9FF'
+            customColor = '#2E90FA'
+            icon = {IconType.Work}
+            onClickCallback = {() => {}}
             />);
     });
 
@@ -17,12 +19,12 @@ describe('BigNavButton', () => {
         const mockHandleClick = jest.fn();
 
         render(<BigNavButton 
-            bgColor='#F0F9FF'
-            customColor='#2E90FA'
-            icon='work'
-            onClickCallback= {mockHandleClick}
-            subtitle= 'New Request'
-            title= 'Submit'
+            bgColor = '#F0F9FF'
+            customColor = '#2E90FA'
+            icon = {IconType.Work}
+            onClickCallback = {mockHandleClick}
+            subtitle = 'New Request'
+            title = 'Submit'
             />);
 
         const button = screen.getByText('Submit'); 
