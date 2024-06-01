@@ -31,10 +31,13 @@ describe("Buttons Toolbar Component", () => {
 
     const button1 = screen.getByRole("button", {name: /all/i});
     expect(button1).toBeInTheDocument();
+
     const button2 = screen.getByRole("button", {name: /leaves/i});
     expect(button2).toBeInTheDocument();
+
     const button3 = screen.getByRole("button", {name: /drafts/i});
     expect(button3).toBeInTheDocument();
+
     const button4 = screen.getByRole("button", {name: /Accommodations/i});
     expect(button4).toBeInTheDocument();
   });
@@ -42,8 +45,7 @@ describe("Buttons Toolbar Component", () => {
   it("renders with `leaves` button selected", () => {
     render(<ButtonsToolbar items={items} onClick={callBack} selectedItem={"leaves"} />);
 
-    // eslint-disable-next-line testing-library/no-node-access
-    const spanElement = document.querySelector('span[style*="border-bottom: 1px solid #175CD3"]');
+    const spanElement = screen.getByTestId("spanStyle");
     expect(spanElement).toBeInTheDocument();
   });
 
