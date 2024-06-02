@@ -1,4 +1,4 @@
-import { createTheme } from "@mui/material";
+import {createTheme} from "@mui/material";
 const nextHrTheme = createTheme({
   palette: {
     primary: {
@@ -15,6 +15,9 @@ const nextHrTheme = createTheme({
     },
     warning: {
       main: "#FFA000"
+    },
+    custom: {
+      paper: "#FCFCFD"
     },
     info: {
       main: "#FFFFFF",
@@ -154,6 +157,16 @@ const nextHrTheme = createTheme({
         }
       }
     },
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          fontFamily: "Poppins",
+          fontWeightMedium: 400,
+          fontSize: "16px",
+          lineHeight: "21px"
+        }
+      }
+    },
     MuiTypography: {
       styleOverrides: {
         root: {
@@ -189,7 +202,7 @@ const nextHrTheme = createTheme({
           lineHeight: "1.5rem"
         }
       }
-    },
+    }
   }
 });
 export default nextHrTheme;

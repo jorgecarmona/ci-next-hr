@@ -1,3 +1,4 @@
+import ApiPlayground from "./api-playground";
 import PlayGround from "./playground";
 
-export {PlayGround};
+export {ApiPlayground, PlayGround};
