@@ -1,25 +1,6 @@
 import {createTheme} from "@mui/material";
 const nextHrTheme = createTheme({
   palette: {
-    primary: {
-      main: "#1570EF"
-    },
-    secondary: {
-      main: "#344054"
-    },
-    success: {
-      main: "#027A48"
-    },
-    error: {
-      main: "#B42318"
-    },
-    warning: {
-      main: "#FFA000"
-    },
-    text: {
-      primary: "#1570EF",
-      secondary: "#344054"
-    },
     custom: {
       paper: "#FCFCFD"
     }
