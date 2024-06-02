@@ -16,20 +16,18 @@ interface ButtonsToolbarProps {
 
 function ButtonsToolbar({items, onClick, selectedItem}: ButtonsToolbarProps) {
   return (
-    <>
-      <Stack direction="row" spacing={2}>
-        {items.map((item: ToolbarItem, index: number) => (
-          <ToolbarButton
-            icon={item.icon}
-            key={index}
-            onClick={() => onClick(item.text.toLowerCase())}
-            selected={selectedItem === item.text.toLowerCase()}
-          >
-            {item.text}
-          </ToolbarButton>
-        ))}
-      </Stack>
-    </>
+    <Stack direction="row" spacing={2}>
+      {items.map((item: ToolbarItem, index: number) => (
+        <ToolbarButton
+          icon={item.icon}
+          key={index}
+          onClick={() => onClick(item.text.toLowerCase())}
+          selected={selectedItem === item.text.toLowerCase()}
+        >
+          {item.text}
+        </ToolbarButton>
+      ))}
+    </Stack>
   );
 }
 
