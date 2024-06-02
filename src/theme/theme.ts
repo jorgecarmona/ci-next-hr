@@ -16,13 +16,14 @@ const nextHrTheme = createTheme({
     warning: {
       main: "#FFA000"
     },
-    text: {
-      primary: "#1570EF",
-      secondary: "#344054"
-    },
     custom: {
       paper: "#FCFCFD"
-    }
+    },
+    info: {
+      main: "#FFFFFF",
+      light: "#F0F9FF",
+      contrastText: '#FFFFFF',
+    },
   },
   typography: {
     fontFamily: "Poppins, sans-serif",
