@@ -22,8 +22,8 @@ const nextHrTheme = createTheme({
     info: {
       main: "#FFFFFF",
       light: "#F0F9FF",
-      contrastText: '#FFFFFF',
-    },
+      contrastText: "#FFFFFF"
+    }
   },
   typography: {
     fontFamily: "Poppins, sans-serif",
