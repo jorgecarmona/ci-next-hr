@@ -1,4 +1,4 @@
-import React, {useState, CSSProperties} from "react";
+import React from "react";
 import Typography from "../atoms/typography";
 import TextField from "../atoms/textField";
 import PasswordTextField from "../atoms/password-textfield";
@@ -7,9 +7,9 @@ import Link from "../atoms/link";
 import useIsMobile from "../hooks/use-is-mobile";
 
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [language, setLanguage] = useState("");
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [language, setLanguage] = React.useState("");
   const isMobile = useIsMobile();
 
   const handleEmailChange = (value: string) => {
@@ -30,10 +30,9 @@ function Login() {
     console.log("Language:", language);
   };
 
-  const cardStyles: CSSProperties = {
+  const cardStyles: React.CSSProperties = {
     width: isMobile ? "334px" : "448px",
     padding: "48px 24px",
-    border: "1px solid #000000",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
@@ -44,20 +43,20 @@ function Login() {
     margin: "101px 32px"
   };
 
-  const contentStyles: CSSProperties = {
+  const contentStyles: React.CSSProperties = {
     display: "flex",
     flexDirection: "column",
     gap: "16px",
     width: "100%"
   };
 
-  const fieldContainerStyles: CSSProperties = {
+  const fieldContainerStyles: React.CSSProperties = {
     display: "flex",
     flexDirection: "column",
     gap: "16px"
   };
 
-  const linkContainerStyles: CSSProperties = {
+  const linkContainerStyles: React.CSSProperties = {
     fontSize: "0.875rem",
     textAlign: "center",
     display: "flex",
@@ -66,7 +65,7 @@ function Login() {
     gap: isMobile ? "8px" : "16px"
   };
 
-  const linkStyles: CSSProperties = {
+  const linkStyles: React.CSSProperties = {
     fontSize: "0.875rem",
     textAlign: "center"
   };
@@ -83,7 +82,6 @@ function Login() {
           <div style={{marginBottom: "8px"}}>
             <TextField
               label="Email"
-              aria-label="email"
               value={email}
               onChangeTextField={handleEmailChange}
               placeholder="Enter your email here"
@@ -94,7 +92,6 @@ function Login() {
           </div>
           <PasswordTextField
             label="Password"
-            aria-label="password"
             value={password}
             onChangeCallback={handlePasswordChange}
             required
@@ -134,7 +131,6 @@ function Login() {
         <div style={{width: "100%", marginTop: "24px"}}>
           <TextField
             label=""
-            aria-label="language"
             value={language}
             onChangeTextField={handleLanguageChange}
             placeholder="English"
