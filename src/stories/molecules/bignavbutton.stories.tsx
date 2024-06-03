@@ -14,10 +14,15 @@ const meta = {
         icon: {
             control: "select",
             options: ["no icon", ...Object.values(IconType)], 
-            }
+        }
     },
     tags: ['autodocs'],
-} satisfies Meta <typeof BigNavButton>;
+    args: {
+        onClickCallback: (value) => {
+            console.log('Click button:', value);
+        },
+    }
+} satisfies Meta<typeof BigNavButton>;
 
 export default meta;
 
