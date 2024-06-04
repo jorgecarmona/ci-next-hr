@@ -1,3 +1,4 @@
+import BigNavButton from "./bignavbutton";
 import NavItem from "./navItem";
 
-export {NavItem};
+export {BigNavButton, NavItem};

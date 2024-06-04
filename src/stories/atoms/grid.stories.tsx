@@ -15,7 +15,7 @@ const Item = styled(Paper)(({theme}) => ({
 }));
 
 const meta = {
-  title: "Components/Grid",
+  title: "Atoms/Grid",
   component: Grid,
   parameters: {
     layout: "centered"

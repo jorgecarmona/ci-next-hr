@@ -16,12 +16,15 @@ const nextHrTheme = createTheme({
     warning: {
       main: "#FFA000"
     },
-    text: {
-      primary: "#1570EF",
-      secondary: "#344054"
-    },
     custom: {
-      paper: "#FCFCFD"
+      paper: "#FCFCFD",
+      title: "#1570EF",
+      subtitle: "#344054"
+    },
+    info: {
+      main: "#FFFFFF",
+      light: "#F0F9FF",
+      contrastText: "#FFFFFF"
     }
   },
   typography: {
