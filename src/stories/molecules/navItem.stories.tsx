@@ -15,6 +15,9 @@ const meta = {
             options: ["no icon", ...Object.values(IconType)], 
             }
     },
+    args: {
+        selected: false,
+    }
 } satisfies Meta<typeof NavItem>;
 
 export default meta;
