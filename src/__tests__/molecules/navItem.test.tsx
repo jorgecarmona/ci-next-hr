@@ -32,7 +32,7 @@ describe('NavItem', () => {
     it('calls onClickCallback when button is clicked', () => {
         render(
             <NavItem 
-                icon={IconType.Person2}
+                icon={IconType.Person}
                 title="ACCOUNT"
                 selected
                 onClickCallBack={mockOnClickCallBack}

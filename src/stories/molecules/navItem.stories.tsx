@@ -33,7 +33,7 @@ export const Reports : Story = {
 
 export const Account : Story = {
     args : {
-        icon: IconType.Person2,
+        icon: IconType.Person,
         title: "ACCOUNT",
         onClickCallBack: (value) => {
             console.log('Click button:', value);
