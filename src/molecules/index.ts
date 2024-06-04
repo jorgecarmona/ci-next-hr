@@ -1,3 +1,4 @@
+import BigNavButton from "./bignavbutton";
 import ButtonsToolbar from "./buttons-toolbar";
 
-export {ButtonsToolbar};
+export {BigNavButton, ButtonsToolbar};

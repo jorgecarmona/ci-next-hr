@@ -15,6 +15,16 @@ const nextHrTheme = createTheme({
     },
     warning: {
       main: "#FFA000"
+    },
+    custom: {
+      paper: "#FCFCFD",
+      title: "#1570EF",
+      subtitle: "#344054"
+    },
+    info: {
+      main: "#FFFFFF",
+      light: "#F0F9FF",
+      contrastText: "#FFFFFF"
     }
   },
   typography: {
@@ -146,6 +156,16 @@ const nextHrTheme = createTheme({
             backgroundColor: "#EAECF0",
             color: "#000000"
           }
+        }
+      }
+    },
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          fontFamily: "Poppins",
+          fontWeightMedium: 400,
+          fontSize: "16px",
+          lineHeight: "21px"
         }
       }
     },
