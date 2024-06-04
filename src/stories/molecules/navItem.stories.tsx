@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 import NavItem from "../../molecules/navItem";
 import { IconType } from "../../atoms/icon-store";
+import {action} from "@storybook/addon-actions";
 
 const meta = {
     title: 'Molecules/NavItem',
@@ -17,6 +18,7 @@ const meta = {
     },
     args: {
         selected: false,
+        onClickCallBack: action("Button was clicked...")
     }
 } satisfies Meta<typeof NavItem>;
 
@@ -28,9 +30,7 @@ export const Reports : Story = {
     args : {
         icon: IconType.TrendingUp,
         title: "REPORTS",
-        onClickCallBack: (value) => {
-            console.log('Click button:', value);
-        },
+        onClickCallBack: action("Button was clicked...")
     }
 }
 
@@ -38,9 +38,6 @@ export const Account : Story = {
     args : {
         icon: IconType.Person,
         title: "ACCOUNT",
-        onClickCallBack: (value) => {
-            console.log('Click button:', value);
-        },
     }
 }
 
@@ -48,9 +45,6 @@ export const Admin : Story = {
     args : {
         icon: IconType.Settings,
         title: "ADMIN",
-        onClickCallBack: (value) => {
-            console.log('Click button:', value);
-        },
         selected: true
     }
 }
