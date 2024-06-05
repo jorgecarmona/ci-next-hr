@@ -1,12 +1,9 @@
 import React from "react";
-
 import { Grid } from "../atoms";
 import { Box } from "@mui/material";
-
 interface LayoutProps{
   Header: React.ReactNode;
 }
-
 
 function NavToolBarLayout ({Header}:LayoutProps){
     return(
