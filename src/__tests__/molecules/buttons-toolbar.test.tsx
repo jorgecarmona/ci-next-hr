@@ -43,7 +43,9 @@ describe("Buttons Toolbar Component", () => {
   });
 
   it("renders with `leaves` button selected", () => {
-    render(<ButtonsToolbar items={items} onClick={callBack} selectedItem={"leaves"} />);
+    render(
+      <ButtonsToolbar items={[{icon: IconType.Article, text: "Leaves"}]} onClick={callBack} selectedItem={"leaves"} />
+    );
 
     const spanElement = screen.getByTestId("spanStyle");
     expect(spanElement).toBeInTheDocument();
